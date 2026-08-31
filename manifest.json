@@ -1,0 +1,19 @@
+{
+  "name": "Miidear — Bespoke Wedding Invitations",
+  "short_name": "Miidear",
+  "description": "Bespoke luxury wedding invitations and fine stationery. Bangkok, by appointment.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F7F5EF",
+  "theme_color": "#2F2F2F",
+  "categories": ["lifestyle", "shopping", "business"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

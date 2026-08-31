@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miidear — The Art of Inviting · Bangkok</title>
+  <meta name="description" content="Miidear is a bespoke wedding invitation atelier in Bangkok. Hand-crafted luxury stationery, by appointment." />
+  <meta name="theme-color" content="#2F2F2F" />
+  <meta property="og:title" content="Miidear — Bespoke Wedding Invitations" />
+  <meta property="og:description" content="Hand-crafted luxury wedding stationery. Bangkok, by appointment." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Ballet&family=Pinyon+Script&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Motion layer. Loaded in head so the gate class lands before first paint.
+       If this file is absent the site renders exactly as it does without it. -->
+  <script src="motion.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="header">
+    <a class="brand" href="index.html" aria-label="Miidear home"><span class="brand-name">Miidear</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="experience.html">The Experience</a>
+      <a href="index.html#philosophy">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="booking.html">Begin Your Journey</a>
+    </nav>
+    <button class="nav-close" id="navClose" aria-label="Close menu"></button>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
+        <source src="hero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__inner reveal">
+        <span class="eyebrow">Bangkok · By Appointment</span>
+        <h1 data-content="home:hero_headline">Every love story deserves a work of art.</h1>
+        <p class="lead" data-content="home:hero_subheadline">Bespoke wedding invitation suites, designed with intention and crafted to last a lifetime.</p>
+        <div class="hero__cta">
+          <a class="btn" href="booking.html" data-content="home:hero_btn1">Begin Your Journey</a>
+          <a class="btn" href="portfolio.html" data-content="home:hero_btn2">View Portfolio</a>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#atelier" aria-label="Scroll down">Scroll</a>
+    </section>
+
+    <!-- ===================== THE ATELIER ===================== -->
+    <section class="section container center" id="atelier">
+      <div class="section-head reveal">
+        <div class="flourish"><span>◆</span></div>
+        <div class="script" data-content="home:atelier_title">The Atelier</div>
+        <p class="lead" data-content="home:atelier_text">Every suite begins with a conversation, a sketch, and a vision uniquely yours.</p>
+      </div>
+      <div class="reveal"><div class="ph ph--landscape" data-image="home_atelier" style="max-width:980px;margin-inline:auto"></div></div>
+    </section>
+
+    <!-- ===================== A SELECTION OF OUR WORK ===================== -->
+    <section class="section section--alt" id="featured">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="script" data-content="home:selection_title">A Selection of Our Work</div>
+          <p class="lead" data-content="home:selection_text">A glimpse of recent commissions, each drawn from a couple's own story.</p>
+        </div>
+        <div class="collection-grid" id="featuredGrid" data-gallery="featured">
+          <!-- Cards rendered by main.js; markup is also static-safe below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== OUR PHILOSOPHY ===================== -->
+    <section class="section container" id="philosophy">
+      <div class="split">
+        <div class="split__media reveal"><div class="ph ph--portrait" data-image="home_philosophy"></div></div>
+        <div class="split__body reveal stack">
+          <div class="flourish" style="justify-content:flex-start"><span>◆</span></div>
+          <div class="script" data-content="home:philosophy_title">Our Philosophy</div>
+          <p>We believe an invitation is not stationery but a promise — the first object a guest will hold from your celebration, and often the one they keep longest.</p>
+          <p>So we work with only a small number of couples each season. That restraint lets us give each commission the conversation, the drawing, and the craftsmanship it deserves. Nothing is templated. Everything is considered.</p>
+          <p class="muted">— The Miidear Atelier</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="section section--paper" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="script" data-content="home:couples_title">Words From Our Couples</div>
+          <p class="lead" data-content="home:couples_text">A few notes from those we have had the honour of working with.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="rail" id="testimonialRail" aria-label="Testimonials"></div>
+      </div>
+    </section>
+
+    <!-- ===================== BEGIN YOUR JOURNEY ===================== -->
+    <section class="section section--alt center" id="reserve">
+      <div class="container">
+        <div class="section-head reveal" style="margin-bottom:var(--s-4)">
+          <div class="script" data-content="home:journey_title">Begin Your Journey</div>
+          <p class="lead" data-content="home:journey_text">Tell us about your celebration. We will guide you through papers, techniques, and possibilities — with no obligation.</p>
+        </div>
+        <div class="reveal">
+          <a class="btn" href="booking.html">Schedule a Consultation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="miidear-logo.png" alt="Miidear" />
+        <p class="footer-slogan" data-content="home:footer_slogan">Crafted with intention</p>
+        <p class="footer-visit">Bangkok, Thailand · By Appointment</p>
+        <p class="footer-visit">Tuesday – Saturday · 10:00 – 18:00</p>
+      </div>
+      <div><h5>Explore</h5><ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="experience.html">The Experience</a></li>
+        <li><a href="index.html#philosophy">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul></div>
+      <div><h5>Visit</h5><ul>
+        <li><a href="contact.html">Bangkok, Thailand</a></li>
+      </ul></div>
+      <div><h5>Inquire</h5><ul>
+        <li><a href="booking.html">Book a Consultation</a></li>
+      </ul></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Miidear. All rights reserved.</span>
+      <span>Bangkok · Thailand</span>
+    </div>
+  </footer>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Collection viewer">
+    <div class="lightbox__scrim" data-close></div>
+    <div class="lightbox__dialog">
+      <button class="lightbox__close" data-close>Close ✕</button>
+      <button class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="Previous">‹</button>
+      <div class="lightbox__frame" id="lbFrame"></div>
+      <button class="lightbox__btn lightbox__next" id="lbNext" aria-label="Next">›</button>
+      <div class="lightbox__caption">
+        <div class="who" id="lbWho"></div>
+        <div class="count" id="lbCount"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lightbox.js"></script>
+  <script src="config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+  <script src="carousel.js"></script>
+</body>
+</html>

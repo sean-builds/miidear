@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Work — Miidear</title>
+  <meta name="description" content="A portfolio of bespoke wedding invitation suites by Miidear — Thai, Chinese, modern luxury, and Western classic." />
+  <meta name="theme-color" content="#2F2F2F" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Ballet&family=Pinyon+Script&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Motion layer. Loaded in head so the gate class lands before first paint.
+       If this file is absent the site renders exactly as it does without it. -->
+  <script src="motion.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <a class="brand" href="index.html" aria-label="Miidear home"><span class="brand-name">Miidear</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="portfolio.html" class="is-current">Portfolio</a>
+      <a href="experience.html">The Experience</a>
+      <a href="index.html#philosophy">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="booking.html">Begin Your Journey</a>
+    </nav>
+    <button class="nav-close" id="navClose" aria-label="Close menu"></button>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="flourish"><span>◆</span></div>
+        <div class="script">Our Work</div>
+        <p class="lead">A curated collection of bespoke invitation suites.</p>
+      </div>
+    </section>
+
+    <!-- GALLERIES -->
+    <section class="section--tight container">
+      <!-- All projects in one grid (categories removed) -->
+      <div class="portfolio-section reveal">
+        <div class="collection-grid" id="portfolioGrid" data-gallery="all"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--alt center">
+      <div class="container reveal">
+        <div class="script" style="font-size:clamp(2.6rem,6vw,4rem);margin-bottom:var(--s-2)">Begin Your Collection</div>
+        <p class="lead" style="margin:0 auto var(--s-4)">Every commission starts with a conversation.</p>
+        <a class="btn" href="booking.html">Book Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="miidear-logo.png" alt="Miidear" />
+        <p class="footer-slogan" data-content="home:footer_slogan">Crafted with intention</p>
+        <p class="footer-visit">Bangkok, Thailand · By Appointment</p>
+        <p class="footer-visit">Tuesday – Saturday · 10:00 – 18:00</p>
+      </div>
+      <div><h5>Explore</h5><ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="experience.html">The Experience</a></li>
+        <li><a href="index.html#philosophy">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul></div>
+      <div><h5>Visit</h5><ul>
+        <li><a href="contact.html">Bangkok, Thailand</a></li>
+      </ul></div>
+      <div><h5>Inquire</h5><ul>
+        <li><a href="booking.html">Book a Consultation</a></li>
+      </ul></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Miidear. All rights reserved.</span>
+      <span>Bangkok · Thailand</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Collection viewer">
+    <div class="lightbox__scrim" data-close></div>
+    <div class="lightbox__dialog">
+      <button class="lightbox__close" data-close>Close ✕</button>
+      <button class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="Previous">‹</button>
+      <div class="lightbox__frame" id="lbFrame"></div>
+      <button class="lightbox__btn lightbox__next" id="lbNext" aria-label="Next">›</button>
+      <div class="lightbox__caption"><div class="who" id="lbWho"></div><div class="count" id="lbCount"></div></div>
+    </div>
+  </div>
+
+  <script src="lightbox.js"></script>
+  <script src="config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+  <script src="carousel.js"></script>
+</body>
+</html>

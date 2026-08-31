@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Experience — Miidear</title>
+  <meta name="description" content="The Miidear experience — a thoughtful, collaborative journey from first inquiry to final delivery." />
+  <meta name="theme-color" content="#2F2F2F" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Ballet&family=Pinyon+Script&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Motion layer. Loaded in head so the gate class lands before first paint.
+       If this file is absent the site renders exactly as it does without it. -->
+  <script src="motion.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <a class="brand" href="index.html" aria-label="Miidear home"><span class="brand-name">Miidear</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="experience.html" class="is-current">The Experience</a>
+      <a href="index.html#philosophy">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="booking.html">Begin Your Journey</a>
+    </nav>
+    <button class="nav-close" id="navClose" aria-label="Close menu"></button>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="flourish"><span>◆</span></div>
+        <div class="script" data-content="experience:heading">The Experience</div>
+        <p class="lead" data-content="experience:intro">A thoughtful and collaborative journey crafted around your celebration — unhurried, personal, and made entirely by hand.</p>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section--tight container">
+      <div class="timeline">
+
+        <article class="tl-step reveal">
+          <div class="tl-step__media"><div class="ph ph--landscape" data-image="exp_step_1"></div></div>
+          <div class="tl-step__body">
+            <div class="tl-step__num">01</div>
+            <h3 data-content="experience:step_1_title">Discovery</h3>
+            <p data-content="experience:step_1_desc">We begin with a consultation — an unhurried conversation about your wedding vision, the feeling you hope to create, and the story you wish your stationery to tell.</p>
+          </div>
+          <span class="tl-dot"></span>
+        </article>
+
+        <article class="tl-step reveal">
+          <div class="tl-step__media"><div class="ph ph--landscape" data-image="exp_step_2"></div></div>
+          <div class="tl-step__body">
+            <div class="tl-step__num">02</div>
+            <h3 data-content="experience:step_2_title">Concept &amp; Design</h3>
+            <p data-content="experience:step_2_desc">By hand, the designer sketches monograms and invitation concepts — translating your story into typography, illustration, and a considered direction made for you alone.</p>
+          </div>
+          <span class="tl-dot"></span>
+        </article>
+
+        <article class="tl-step reveal">
+          <div class="tl-step__media"><div class="ph ph--landscape" data-image="exp_step_3"></div></div>
+          <div class="tl-step__body">
+            <div class="tl-step__num">03</div>
+            <h3 data-content="experience:step_3_title">Refinement</h3>
+            <p data-content="experience:step_3_desc">We refine together through feedback and revisions, proof by proof, until every line and detail feels entirely, inevitably right.</p>
+          </div>
+          <span class="tl-dot"></span>
+        </article>
+
+        <article class="tl-step reveal">
+          <div class="tl-step__media"><div class="ph ph--landscape" data-image="exp_step_4"></div></div>
+          <div class="tl-step__body">
+            <div class="tl-step__num">04</div>
+            <h3 data-content="experience:step_4_title">Production</h3>
+            <p data-content="experience:step_4_desc">Materials are selected and the suite is crafted with our trusted makers — letterpress, foil, and engraving brought together with care.</p>
+          </div>
+          <span class="tl-dot"></span>
+        </article>
+
+        <article class="tl-step reveal">
+          <div class="tl-step__media"><div class="ph ph--landscape" data-image="exp_step_5"></div></div>
+          <div class="tl-step__body">
+            <div class="tl-step__num">05</div>
+            <h3 data-content="experience:step_5_title">Delivery</h3>
+            <p data-content="experience:step_5_desc">Your completed suite is assembled, sealed, and delivered into your hands — ready to begin its journey to your guests.</p>
+          </div>
+          <span class="tl-dot"></span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--alt center">
+      <div class="container reveal">
+        <div class="script" style="font-size:clamp(2.6rem,6vw,4rem);margin-bottom:var(--s-2)" data-content="experience:cta_title">Begin Your Journey</div>
+        <p class="lead" style="margin:0 auto var(--s-4)" data-content="experience:cta_text">When you are ready, we would be honoured to begin.</p>
+        <a class="btn" href="booking.html">Book Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="miidear-logo.png" alt="Miidear" />
+        <p class="footer-slogan" data-content="home:footer_slogan">Crafted with intention</p>
+        <p class="footer-visit">Bangkok, Thailand · By Appointment</p>
+        <p class="footer-visit">Tuesday – Saturday · 10:00 – 18:00</p>
+      </div>
+      <div><h5>Explore</h5><ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="experience.html">The Experience</a></li>
+        <li><a href="index.html#philosophy">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul></div>
+      <div><h5>Visit</h5><ul>
+        <li><a href="contact.html">Bangkok, Thailand</a></li>
+      </ul></div>
+      <div><h5>Inquire</h5><ul>
+        <li><a href="booking.html">Book a Consultation</a></li>
+      </ul></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Miidear. All rights reserved.</span>
+      <span>Bangkok · Thailand</span>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

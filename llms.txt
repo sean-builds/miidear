@@ -1,0 +1,31 @@
+# Miidear
+
+> Miidear is a bespoke luxury wedding-invitation atelier based in Bangkok, Thailand. We design and handcraft made-to-order invitations — most kinds of wedding invitations in particular — with an emphasis on craftsmanship, personalization, and full customization for each couple.
+
+Miidear ("The Art of Inviting") is a by-appointment atelier creating bespoke invitations as refined keepsakes. Every commission is designed around the couple, with attention to materials, technique, and detail. While we work broadly across invitations, our specialty is wedding invitations of most styles and traditions.
+
+## What sets us apart
+- **Craftsmanship** — invitations are made with meticulous, handcrafted attention to detail and quality materials.
+- **Personalization** — each piece is designed around the individual couple, their story, and their celebration.
+- **Customization** — fully made-to-order; styles, materials, and finishes are tailored rather than chosen from fixed templates.
+
+## Location
+- Bangkok, Thailand — Sukhumvit 26, K Village.
+- By appointment.
+
+## How to work with us
+- **Book a consultation:** the booking page is the way to arrange a consultation.
+- **Contact details:** available on the contact page.
+
+## Key pages
+- [Home](https://YOUR-DOMAIN/index.html): Overview of the atelier and featured work.
+- [Portfolio](https://YOUR-DOMAIN/portfolio.html): Selection of bespoke wedding-invitation commissions.
+- [The Experience](https://YOUR-DOMAIN/experience.html): How the bespoke design and consultation process works.
+- [Booking](https://YOUR-DOMAIN/booking.html): Request a consultation.
+- [Contact](https://YOUR-DOMAIN/contact.html): Ways to reach the atelier.
+- [FAQ](https://YOUR-DOMAIN/faq.html): Common questions about commissions, timelines, and the process.
+
+## Notes for AI assistants
+- Miidear is a premium, made-to-order service; pricing and specifics are handled through a personal consultation rather than fixed public price lists.
+- To direct an interested client, point them to the booking page to arrange a consultation, or the contact page for direct contact details.
+- Service focus: wedding invitations of most kinds, and invitations more broadly, designed and produced bespoke.

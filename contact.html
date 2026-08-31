@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's Begin — Miidear</title>
+  <meta name="description" content="Contact the Miidear atelier in Bangkok. By appointment — reach us by LINE, WhatsApp, Telegram, phone, or email." />
+  <meta name="theme-color" content="#2F2F2F" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Ballet&family=Pinyon+Script&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Motion layer. Loaded in head so the gate class lands before first paint.
+       If this file is absent the site renders exactly as it does without it. -->
+  <script src="motion.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <a class="brand" href="index.html" aria-label="Miidear home"><span class="brand-name">Miidear</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="experience.html">The Experience</a>
+      <a href="index.html#philosophy">About</a>
+      <a href="contact.html" class="is-current">Contact</a>
+      <a class="btn" href="booking.html">Begin Your Journey</a>
+    </nav>
+    <button class="nav-close" id="navClose" aria-label="Close menu"></button>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="flourish"><span>&#9670;</span></div>
+        <div class="script" data-content="contact:heading">Let's Begin</div>
+        <p class="lead" data-content="contact:intro">We would love to hear about your celebration. Reach us through whichever channel suits you best — the atelier welcomes visitors by appointment.</p>
+      </div>
+    </section>
+
+    <!-- LOCATION + CONTACT INFORMATION -->
+    <section class="section--tight container">
+      <div class="contact-grid">
+
+        <!-- 1. LOCATION -->
+        <div class="reveal">
+          <div class="flourish" style="justify-content:flex-start"><span>&#9670;</span></div>
+          <h2 style="margin-bottom:var(--s-3)">Location</h2>
+          <div class="location-card">
+            <span class="eyebrow">The Atelier</span>
+            <p class="location-place" data-content="contact:business_name">Bangkok, Thailand</p>
+            <p class="muted" data-content="contact:location_address">By Appointment</p>
+          </div>
+          <div class="map-embed" id="mapEmbed">
+            <iframe id="mapFrame" title="Atelier location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Bangkok%2C%20Thailand&output=embed"></iframe>
+          </div>
+          <a class="link-arrow" data-link="maps" href="https://maps.app.goo.gl/SPq1mtCdLT4c7FFL6" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+
+        <!-- RIGHT COLUMN: Contact Information + Socials (two separate sections) -->
+        <div class="reveal">
+
+          <!-- 2. CONTACT INFORMATION
+               Phone shows the number directly; the rest are real links.
+               (TikTok left as a placeholder to be replaced later.) -->
+          <div class="flourish" style="justify-content:flex-start"><span>&#9670;</span></div>
+          <h2 style="margin-bottom:var(--s-3)">Contact Information</h2>
+          <div class="info-list" id="contactInfo">
+            <div class="info-row"><span class="k">Phone</span><span class="v" data-link="phone">(+66) 098 987 7965</span></div>
+            <div class="info-row"><span class="k">Line</span><a data-link="line" href="https://line.me/ti/p/UR6MWdgAZb" target="_blank" rel="noopener">Link &rarr;</a></div>
+            <div class="info-row"><span class="k">Telegram</span><a data-link="telegram" href="https://t.me/bonmiidear" target="_blank" rel="noopener">Link &rarr;</a></div>
+            <div class="info-row"><span class="k">WhatsApp</span><a data-link="whatsapp" href="https://wa.me/0989877965" target="_blank" rel="noopener">Link &rarr;</a></div>
+            <div class="info-row"><span class="k">Email</span><a data-link="email" href="mailto:Miidear.invitations@gmail.com">Link &rarr;</a></div>
+          </div>
+
+          <!-- 3. SOCIALS — a clearly separate section (not merged above). -->
+          <div class="socials-block">
+            <h2 style="margin-bottom:var(--s-3)">Socials</h2>
+            <div class="info-list" id="socialList">
+              <div class="info-row"><span class="k">Instagram</span><a data-link="instagram" href="https://www.instagram.com/miidear_invitations?igsh=aGtmY3E4b29lNnRo" target="_blank" rel="noopener">Link &rarr;</a></div>
+              <div class="info-row"><span class="k">TikTok</span><a data-link="tiktok" href="https://www.tiktok.com/@miidearinvitation?_r=1&amp;_t=ZS-96qjve7B1c4" target="_blank" rel="noopener">Link &rarr;</a></div>
+              <div class="info-row"><span class="k">Facebook</span><a data-link="facebook" href="https://www.facebook.com/share/1EVNuU3yTZ/" target="_blank" rel="noopener">Link &rarr;</a></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VISIT THE ATELIER -->
+    <section class="section section--alt center">
+      <div class="container reveal">
+        <div class="script" style="font-size:clamp(2.6rem,6vw,4rem);margin-bottom:var(--s-3)" data-content="contact:atelier_title">Visit the Atelier</div>
+        <p class="lead" style="margin:0 auto var(--s-2)">Bangkok, Thailand · By Appointment</p>
+        <p class="muted" style="margin:0 auto var(--s-4);max-width:54ch">We welcome consultations by appointment for couples seeking a bespoke wedding invitation experience.</p>
+        <div class="hero__cta" style="justify-content:center">
+          <a class="btn" data-link="maps" href="https://maps.app.goo.gl/SPq1mtCdLT4c7FFL6" target="_blank" rel="noopener">View Location &rarr;</a>
+          <a class="btn" href="booking.html">Book a Consultation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="miidear-logo.png" alt="Miidear" />
+        <p class="footer-slogan" data-content="home:footer_slogan">Crafted with intention</p>
+        <p class="footer-visit">Bangkok, Thailand · By Appointment</p>
+        <p class="footer-visit">Tuesday – Saturday · 10:00 – 18:00</p>
+      </div>
+      <div><h5>Explore</h5><ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="experience.html">The Experience</a></li>
+        <li><a href="index.html#philosophy">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul></div>
+      <div><h5>Visit</h5><ul>
+        <li><a href="contact.html">Bangkok, Thailand</a></li>
+      </ul></div>
+      <div><h5>Inquire</h5><ul>
+        <li><a href="booking.html">Book a Consultation</a></li>
+      </ul></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Miidear. All rights reserved.</span>
+      <span>Bangkok · Thailand</span>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Website Control Center — Miidear</title>
+  <meta name="theme-color" content="#2F2F2F" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Ballet&family=Pinyon+Script&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <a class="brand" href="index.html" aria-label="Miidear home"><span class="brand-name">Miidear</span></a>
+    <button class="dash-mobile-toggle" id="dashMobileToggle" aria-label="Open menu">Menu</button>
+    <span class="dash-greeting" id="dashGreeting"></span>
+    <button class="btn-xs" id="signOut">Sign Out</button>
+  </header>
+
+  <main id="main" class="admin-main">
+    <div class="dash-shell">
+
+      <aside class="dash-side" id="dashSide">
+        <div class="dash-side__title">
+          <span class="eyebrow">Miidear</span>
+          <div class="script" style="font-size:2rem;line-height:1">Control Center</div>
+        </div>
+        <nav class="dash-menu" id="dashMenu" aria-label="Sections">
+          <button class="dash-link is-active" data-tab="editor"><span class="dl-ic">✎</span> Website Editor</button>
+          <button class="dash-link" data-tab="home"><span class="dl-ic">❖</span> Dashboard</button>
+          <button class="dash-link" data-tab="consultations"><span class="dl-ic">✦</span> Consultations</button>
+          <div class="dash-menu__label">Library</div>
+          <button class="dash-link" data-tab="images"><span class="dl-ic">▤</span> Images</button>
+          <button class="dash-link" data-tab="media"><span class="dl-ic">▣</span> Media</button>
+          <button class="dash-link" data-tab="changes"><span class="dl-ic">↺</span> Changes</button>
+        </nav>
+      </aside>
+
+      <div class="dash-content">
+
+        <!-- ===== WEBSITE EDITOR (BETA) ===== -->
+        <section class="dash-panel is-active" id="panel-editor">
+          <div class="dash-head-row">
+            <div><h2 class="dash-h">Website Editor</h2>
+            <p class="dash-sub">Edit the real pages. <strong>Single-click</strong> text or buttons to edit; <strong>double-click</strong> an image or video to replace it. Changes save to the live site.</p></div>
+            <button class="btn-xs" id="editorReload">Reload</button>
+          </div>
+          <div class="editor-pagebar" id="editorPagebar">
+            <button class="seg-btn is-active" data-page="index.html">Home</button>
+            <button class="seg-btn" data-page="portfolio.html">Portfolio</button>
+            <button class="seg-btn" data-page="experience.html">Experience</button>
+            <button class="seg-btn" data-page="contact.html">Contact</button>
+            <button class="seg-btn" data-page="booking.html">Booking</button>
+            <button class="seg-btn" data-scroll="testimonials">Reviews</button>
+          </div>
+          <!-- MII30b: Beta Portfolio management — part of the Portfolio editor
+               workspace. Shown only when the Portfolio page is selected. Reuses
+               the Legacy project editor (openProject) + projects table. -->
+          <div class="beta-portfolio" id="betaPortfolioPanel" hidden>
+            <div class="beta-portfolio__head">
+              <h3 class="dash-h" style="font-size:1.4rem">Manage Projects</h3>
+              <p class="dash-sub">Add, edit, or remove the weddings shown in Selection &amp; Portfolio. Changes appear on the site immediately.</p>
+            </div>
+            <div class="beta-portfolio__grid" id="betaProjectsGrid"><p class="muted">Loading…</p></div>
+          </div>
+          <!-- Mii37 (Option C): the Manage Reviews panel was removed. Reviews are
+               reached via the "Reviews" pagebar button, which smooth-scrolls the
+               preview to the homepage testimonials section. Review CRUD remains in
+               the Reviews dashboard tab. -->
+          <div class="editor-stage">
+            <iframe id="editorFrame" title="Website preview" src="index.html?edit=1"></iframe>
+          </div>
+          <span class="cms-status" id="editorStatus"></span>
+        </section>
+
+        <!-- ===== HOME ===== -->
+        <section class="dash-panel" id="panel-home">
+          <h2 class="dash-h">Welcome back</h2>
+          <p class="dash-sub">A snapshot of your atelier today.</p>
+          <div class="overview-grid" id="overviewGrid"></div>
+          <div class="overview-cols">
+            <div class="overview-card">
+              <h3 class="overview-card__title">Recent Bookings</h3>
+              <div id="recentBookings"><p class="muted">Loading…</p></div>
+            </div>
+            <div class="overview-card">
+              <h3 class="overview-card__title">Recent Activity</h3>
+              <div id="recentActivity"><p class="muted">Loading…</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== CONSULTATIONS ===== -->
+        <section class="dash-panel" id="panel-consultations">
+          <h2 class="dash-h">Consultation Requests</h2>
+          <p class="dash-sub">Every booking from your website. Update each as you progress.</p>
+          <div class="consult-toolbar">
+            <input type="search" id="searchInput" placeholder="Search name, email, phone…" aria-label="Search" />
+            <div class="seg" id="statusSeg">
+              <button class="seg-btn is-active" data-status="">All</button>
+              <button class="seg-btn" data-status="Pending">Pending</button>
+              <button class="seg-btn" data-status="Confirmed">Confirmed</button>
+              <button class="seg-btn" data-status="Completed">Completed</button>
+              <button class="seg-btn" data-status="Cancelled">Cancelled</button>
+            </div>
+            <button class="btn-xs" id="refreshBtn">Refresh</button>
+          </div>
+          <div id="consultCards" class="consult-cards"></div>
+          <div class="empty-note" id="consultEmpty" style="display:none">No requests match this view.</div>
+          <div class="empty-note" id="consultLoading">Loading requests…</div>
+        </section>
+
+        <!-- ===== HERO ===== -->
+        <section class="dash-panel" id="panel-hero">
+          <h2 class="dash-h">Hero</h2>
+          <p class="dash-sub">The opening of your homepage — the film, the words, and the buttons.</p>
+          <div class="editor-split">
+            <div class="editor-preview">
+              <div class="preview-frame hero-preview">
+                <video id="heroPreview" class="hero-preview__video" muted loop playsinline poster="hero-poster.jpg"></video>
+                <div class="hero-preview__overlay"></div>
+                <div class="hero-preview__text">
+                  <div class="hp-eyebrow">Bangkok · By Appointment</div>
+                  <div class="hp-headline" id="hpHeadline">Every love story deserves a work of art.</div>
+                  <div class="hp-sub" id="hpSub">Bespoke wedding invitation suites, designed with intention and crafted to last a lifetime.</div>
+                  <div class="hp-btns"><span class="hp-btn" id="hpBtn1">Begin Your Journey</span><span class="hp-btn" id="hpBtn2">View Portfolio</span></div>
+                </div>
+              </div>
+              <div class="media-controls">
+                <label class="btn-xs go" for="videoInput">Upload / Replace Video</label>
+                <input id="videoInput" type="file" accept="video/*" hidden />
+                <button class="btn-xs danger" id="videoDelete">Delete Video</button>
+              </div>
+              <div class="progress" id="videoProgress" style="display:none"><div class="progress__bar" id="videoProgressBar"></div></div>
+              <span class="cms-status" id="videoStatus"></span>
+              <div class="media-label" style="margin-top:var(--s-3)">Fallback Image (shown on mobile &amp; while the video loads)</div>
+              <img id="posterPreview" class="media-preview" alt="Hero fallback preview" src="hero-poster.jpg" />
+              <div class="media-controls">
+                <label class="btn-xs go" for="posterInput">Upload / Replace Image</label>
+                <input id="posterInput" type="file" accept="image/*" hidden />
+                <button class="btn-xs danger" id="posterDelete">Delete Image</button>
+              </div>
+              <span class="cms-status" id="posterStatus"></span>
+            </div>
+            <div class="editor-fields">
+              <div class="field"><label for="heroHeadline">Headline</label><textarea id="heroHeadline" rows="2"></textarea></div>
+              <div class="field"><label for="heroSub">Subheadline</label><textarea id="heroSub" rows="2"></textarea></div>
+              <div class="field"><label for="heroBtn1">First Button Text</label><input id="heroBtn1" type="text" /></div>
+              <div class="field"><label for="heroBtn1url">First Button Link</label><input id="heroBtn1url" type="text" placeholder="booking.html" /></div>
+              <div class="field"><label for="heroBtn2">Second Button Text</label><input id="heroBtn2" type="text" /></div>
+              <div class="field"><label for="heroBtn2url">Second Button Link</label><input id="heroBtn2url" type="text" placeholder="portfolio.html" /></div>
+              <div class="cms-actions"><button class="btn" id="heroSave">Save Changes</button><span class="cms-status" id="heroStatus"></span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== PORTFOLIO ===== -->
+        <section class="dash-panel" id="panel-portfolio">
+          <div class="dash-head-row">
+            <div><h2 class="dash-h">Portfolio</h2><p class="dash-sub">The weddings you showcase. The template stays fixed — you change the content.</p></div>
+            <button class="btn-xs go" id="addProject">+ Add Project</button>
+          </div>
+          <div id="projectsGrid" class="project-cards"></div>
+        </section>
+
+        <!-- ===== REVIEWS ===== -->
+        <section class="dash-panel" id="panel-reviews">
+          <div class="dash-head-row">
+            <div><h2 class="dash-h">Reviews</h2><p class="dash-sub">Words from your couples, shown exactly as on the site.</p></div>
+            <button class="btn-xs go" id="addReview">+ Add Review</button>
+          </div>
+          <div id="reviewsGrid" class="review-cards"></div>
+        </section>
+
+        <!-- ===== CONTACT & BUSINESS ===== -->
+        <section class="dash-panel" id="panel-contact">
+          <h2 class="dash-h">Contact &amp; Business</h2>
+          <p class="dash-sub">Your details and links — used across the website's contact page, header, and footer.</p>
+          <div class="editor-fields editor-fields--wide" id="contactEditor"></div>
+          <div class="cms-actions"><button class="btn" id="contactSave">Save Changes</button><span class="cms-status" id="contactStatus"></span></div>
+        </section>
+
+        <!-- ===== MEDIA LIBRARY ===== -->
+        <section class="dash-panel" id="panel-media">
+          <div class="dash-head-row">
+            <div><h2 class="dash-h">Media Library</h2><p class="dash-sub">Your uploaded images and videos.</p></div>
+            <label class="btn-xs go" for="mediaUpload">+ Upload</label>
+            <input id="mediaUpload" type="file" accept="image/*,video/*" multiple hidden />
+          </div>
+          <div class="media-toolbar">
+            <input type="search" id="mediaSearch" placeholder="Search files…" aria-label="Search media" />
+            <div class="seg" id="mediaFilter">
+              <button class="seg-btn is-active" data-kind="">All</button>
+              <button class="seg-btn" data-kind="image">Images</button>
+              <button class="seg-btn" data-kind="video">Videos</button>
+            </div>
+          </div>
+          <div class="progress" id="mediaProgress" style="display:none"><div class="progress__bar" id="mediaProgressBar"></div></div>
+          <div id="mediaGrid" class="media-grid"></div>
+          <div class="empty-note" id="mediaEmpty" style="display:none">No media yet. Use “+ Upload”.</div>
+          <div class="empty-note" id="mediaLoading">Loading media…</div>
+        </section>
+
+        <!-- ===== PAGE TEXT ===== -->
+        <section class="dash-panel" id="panel-pagetext">
+          <h2 class="dash-h">Page Text</h2>
+          <p class="dash-sub">Headings and paragraphs across the website. Edit and save — the site updates automatically.</p>
+          <div class="editor-fields editor-fields--wide" id="pageTextEditor"></div>
+          <div class="cms-actions"><button class="btn" id="pageTextSave">Save Changes</button><span class="cms-status" id="pageTextStatus"></span></div>
+        </section>
+
+        <!-- ===== IMAGES ===== -->
+        <section class="dash-panel" id="panel-images">
+          <div class="dash-head-row">
+            <div><h2 class="dash-h">Images</h2><p class="dash-sub">The fixed images across your site — hero fallback, homepage, and the experience steps. Upload, replace, or remove.</p></div>
+          </div>
+          <div id="imagesGrid" class="image-slots"></div>
+        </section>
+
+        <!-- ===== CHANGES ===== -->
+        <section class="dash-panel" id="panel-changes">
+          <div class="dash-head-row">
+            <div><h2 class="dash-h">Changes</h2><p class="dash-sub">A history of edits. You can restore a previous value at any time.</p></div>
+            <button class="btn-xs" id="changesRefresh">Refresh</button>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>When</th><th>Section</th><th>Field</th><th>Previous</th><th>New</th><th style="text-align:right">Action</th></tr></thead>
+              <tbody id="changesBody"></tbody>
+            </table>
+            <div class="empty-note" id="changesEmpty" style="display:none">No changes recorded yet.</div>
+            <div class="empty-note" id="changesLoading">Loading…</div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Detail / editor drawer -->
+  <div class="modal" id="detailModal">
+    <div class="drawer" role="dialog" aria-modal="true"><button class="drawer-close" id="detailClose" aria-label="Close">&times;</button><div id="detailContent"></div></div>
+  </div>
+  <div class="modal" id="editModal">
+    <div class="drawer" role="dialog" aria-modal="true"><button class="drawer-close" id="editClose" aria-label="Close">&times;</button><div id="editContent"></div></div>
+  </div>
+
+  <input id="editorFileInput" type="file" accept="image/*,video/*" hidden />
+  <div class="toast" id="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="main.js"></script>
+  <script src="emailjs.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
