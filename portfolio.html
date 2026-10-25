@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Work — Miidear</title>
-  <meta name="description" content="A portfolio of bespoke wedding invitation suites by Miidear — Thai, Chinese, modern luxury, and Western classic." />
+  <title>Portfolio — Miidear</title>
+  <meta name="description" content="Illustrative wedding invitation design studies by Miidear — Thai, Chinese, modern luxury, and Western classic." />
   <meta name="theme-color" content="#2F2F2F" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
@@ -12,101 +12,117 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Ballet&family=Pinyon+Script&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <!-- Motion layer. Loaded in head so the gate class lands before first paint.
-       If this file is absent the site renders exactly as it does without it. -->
-  <script src="motion.js"></script>
+  <link rel="stylesheet" href="refinements.css" />
 </head>
 <body>
+  <noscript><style>@media(max-width:820px){.site-header{position:relative;height:auto;display:block;padding:1rem}.nav{position:static;visibility:visible;pointer-events:auto;transform:none;flex-direction:row;flex-wrap:wrap;padding:1rem 0;gap:1rem}.nav a:not(.btn){font-size:1rem}.nav-toggle{display:none}}</style></noscript>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header is-scrolled" id="header">
-    <a class="brand" href="index.html" aria-label="Miidear home"><span class="brand-name">Miidear</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="brand" href="index.html">Miidear</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="portfolio.html" class="is-current">Portfolio</a>
       <a href="experience.html">The Experience</a>
       <a href="index.html#philosophy">About</a>
       <a href="contact.html">Contact</a>
-      <a class="btn" href="booking.html">Begin Your Journey</a>
+      <a class="btn" href="booking.html">Plan a consultation</a>
     </nav>
-    <button class="nav-close" id="navClose" aria-label="Close menu"></button>
   </header>
 
-  <main id="main">
+  <main id="main"><noscript><p class="form-notice" style="margin:100px 24px 24px">Enable JavaScript to use the galleries and save a consultation draft. You can still explore the pages using the navigation.</p></noscript>
     <!-- HERO -->
     <section class="page-hero">
       <div class="container reveal">
-        <div class="flourish"><span>◆</span></div>
-        <div class="script">Our Work</div>
-        <p class="lead">A curated collection of bespoke invitation suites.</p>
+        <div class="flourish" aria-hidden="true"><span>◆</span></div>
+        <h1 class="script">Portfolio</h1>
+        <p class="lead">Explore illustrative design studies, arranged by tradition and style. These concepts are a starting point for conversation, rather than photographs of completed commissions.</p>
       </div>
     </section>
 
     <!-- GALLERIES -->
     <section class="section--tight container">
-      <!-- All projects in one grid (categories removed) -->
+      <!-- Thai Traditional -->
       <div class="portfolio-section reveal">
-        <div class="collection-grid" id="portfolioGrid" data-gallery="all"></div>
+        <div class="portfolio-section__head">
+          <h2>Thai Traditional Wedding Invitations</h2>
+          <span class="muted">Gold leaf · benjarong motifs · silk textures</span>
+        </div>
+        <p class="muted" style="margin-bottom:var(--s-3);max-width:70ch">Invitations rooted in Thai heritage — lai thai linework, auspicious symbolism, and warm metallics, reimagined with a restrained, modern hand.</p>
+        <div class="rail" data-gallery="thai"></div>
+      </div>
+
+      <!-- Chinese Traditional -->
+      <div class="portfolio-section reveal">
+        <div class="portfolio-section__head">
+          <h2>Chinese Traditional Wedding Invitations</h2>
+          <span class="muted">Double happiness · cinnabar · gilt edges</span>
+        </div>
+        <p class="muted" style="margin-bottom:var(--s-3);max-width:70ch">Suites honouring Chinese custom — the double happiness character, deep reds and golds, and elegant vertical compositions.</p>
+        <div class="rail" data-gallery="chinese"></div>
+      </div>
+
+      <!-- Modern Luxury -->
+      <div class="portfolio-section reveal">
+        <div class="portfolio-section__head">
+          <h2>Modern Luxury Wedding Invitations</h2>
+          <span class="muted">Minimal · sculptural type · tonal palettes</span>
+        </div>
+        <p class="muted" style="margin-bottom:var(--s-3);max-width:70ch">Contemporary stationery defined by negative space, sculptural typography, and quiet, tonal palettes — luxury through restraint.</p>
+        <div class="rail" data-gallery="modern"></div>
+      </div>
+
+      <!-- Western Classic -->
+      <div class="portfolio-section reveal">
+        <div class="portfolio-section__head">
+          <h2>Western Classic Wedding Invitations</h2>
+          <span class="muted">Engraving · letterpress · wax seals</span>
+        </div>
+        <p class="muted" style="margin-bottom:var(--s-3);max-width:70ch">Timeless European tradition — engraved scripts, deckled edges, monograms, and hand-pressed wax seals.</p>
+        <div class="rail" data-gallery="western"></div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section section--alt center">
+    <section class="section section--mint center">
       <div class="container reveal">
         <div class="script" style="font-size:clamp(2.6rem,6vw,4rem);margin-bottom:var(--s-2)">Begin Your Collection</div>
         <p class="lead" style="margin:0 auto var(--s-4)">Every commission starts with a conversation.</p>
-        <a class="btn" href="booking.html">Book Consultation</a>
+        <a class="btn btn--gold" href="booking.html">Plan a consultation</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="miidear-logo.png" alt="Miidear" />
-        <p class="footer-slogan" data-content="home:footer_slogan">Crafted with intention</p>
-        <p class="footer-visit">Bangkok, Thailand · By Appointment</p>
-        <p class="footer-visit">Tuesday – Saturday · 10:00 – 18:00</p>
-      </div>
-      <div><h5>Explore</h5><ul>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="experience.html">The Experience</a></li>
-        <li><a href="index.html#philosophy">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-      </ul></div>
-      <div><h5>Visit</h5><ul>
-        <li><a href="contact.html">Bangkok, Thailand</a></li>
-      </ul></div>
-      <div><h5>Inquire</h5><ul>
-        <li><a href="booking.html">Book a Consultation</a></li>
-      </ul></div>
+      <div><p class="footer-brand">Miidear</p><p class="footer-slogan">Crafted with intention</p></div>
+      <div><h2 class="footer-heading">Explore</h2><ul><li><a href="portfolio.html">Portfolio</a></li><li><a href="experience.html">The Experience</a></li><li><a href="index.html#philosophy">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
+      <div><h2 class="footer-heading">Visit</h2><ul><li><a href="contact.html">Bangkok, Thailand</a></li><li><a href="contact.html">By Appointment</a></li></ul></div>
+      <div><h2 class="footer-heading">Inquire</h2><ul><li><a href="booking.html">Plan a consultation</a></li></ul></div>
     </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year"></span> Miidear. All rights reserved.</span>
-      <span>Bangkok · Thailand</span>
-    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Miidear. All rights reserved.</span><span>Bangkok · Thailand</span></div>
   </footer>
 
+  <nav class="mobile-bar" aria-label="Quick links">
+    <a href="contact.html">Contact</a><a href="experience.html">Experience</a><a href="booking.html">Book</a>
+  </nav>
+
   <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Collection viewer">
+  <div class="lightbox" id="lightbox" tabindex="-1" role="dialog" aria-modal="true" aria-label="Collection viewer">
     <div class="lightbox__scrim" data-close></div>
     <div class="lightbox__dialog">
       <button class="lightbox__close" data-close>Close ✕</button>
       <button class="lightbox__btn lightbox__prev" id="lbPrev" aria-label="Previous">‹</button>
       <div class="lightbox__frame" id="lbFrame"></div>
       <button class="lightbox__btn lightbox__next" id="lbNext" aria-label="Next">›</button>
-      <div class="lightbox__caption"><div class="who" id="lbWho"></div><div class="count" id="lbCount"></div></div>
+      <div class="lightbox__caption"><div class="who" id="lbWho"></div><div class="count" id="lbCount" aria-live="polite" aria-atomic="true"></div></div>
     </div>
   </div>
 
   <script src="lightbox.js"></script>
-  <script src="config.js"></script>
-  <script src="supabase-client.js"></script>
-  <script src="content.js"></script>
+  <script src="studies.js"></script>
   <script src="main.js"></script>
-  <script src="carousel.js"></script>
 </body>
 </html>

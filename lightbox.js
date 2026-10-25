@@ -1,96 +1,14 @@
-// ============================================================================
-// Miidear — js/lightbox.js
-// A premium collection viewer. Opens a centered modal over a blurred backdrop,
-// shows one square frame at a time, and loops infinitely in both directions
-// (last → next → first, first → prev → last). Supports image and video slots.
-//
-// Usage (from main.js):
-//   window.MiidearLightbox.open({ couple: 'Pim & Krit', images: [ {img:'...'} , {video:'...'} , {} ] });
-// A slot with neither img nor video renders an elegant placeholder.
-// ============================================================================
-(function () {
+(function(){
   'use strict';
-
-  var root   = document.getElementById('lightbox');
-  if (!root) return; // page has no lightbox markup
-
-  var frame  = document.getElementById('lbFrame');
-  var who    = document.getElementById('lbWho');
-  var count  = document.getElementById('lbCount');
-  var prevBtn = document.getElementById('lbPrev');
-  var nextBtn = document.getElementById('lbNext');
-
-  var slides = [];
-  var index = 0;
-  var lastFocus = null;
-
-  function renderSlide() {
-    if (!slides.length) return;
-    var slide = slides[index];
-    var inner = '';
-    if (slide && slide.video) {
-      inner = '<video src="' + slide.video + '" controls playsinline></video>';
-    } else if (slide && slide.img) {
-      inner = '<img src="' + slide.img + '" alt="Collection image ' + (index + 1) + '" />';
-    } else {
-      // Elegant placeholder when no media is supplied yet.
-      inner = '<div class="ph ph--square"></div>';
-    }
-    frame.innerHTML = inner;
-    count.textContent = (index + 1) + ' / ' + slides.length;
-  }
-
-  // Infinite looping: wrap around at both ends.
-  function step(dir) {
-    if (!slides.length) return;
-    index = (index + dir + slides.length) % slides.length;
-    renderSlide();
-  }
-
-  function open(collection) {
-    slides = (collection && collection.images && collection.images.length) ? collection.images : [{}];
-    index = 0;
-    who.textContent = collection && collection.couple ? collection.couple : (collection && collection.name) || '';
-    renderSlide();
-    lastFocus = document.activeElement;
-    root.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', onKey);
-    nextBtn.focus();
-  }
-
-  function close() {
-    root.classList.remove('is-open');
-    document.body.style.overflow = '';
-    document.removeEventListener('keydown', onKey);
-    // Stop any playing video.
-    var v = frame.querySelector('video');
-    if (v) { try { v.pause(); } catch (e) {} }
-    frame.innerHTML = '';
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-
-  function onKey(e) {
-    if (e.key === 'Escape') close();
-    else if (e.key === 'ArrowRight') step(1);
-    else if (e.key === 'ArrowLeft') step(-1);
-  }
-
-  // Controls
-  nextBtn.addEventListener('click', function () { step(1); });
-  prevBtn.addEventListener('click', function () { step(-1); });
-  Array.prototype.forEach.call(root.querySelectorAll('[data-close]'), function (el) {
-    el.addEventListener('click', close);
-  });
-
-  // Touch swipe
-  var startX = 0;
-  frame.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
-  frame.addEventListener('touchend', function (e) {
-    var dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 45) step(dx < 0 ? 1 : -1);
-  }, { passive: true });
-
-  // Expose
-  window.MiidearLightbox = { open: open, close: close };
+  var root=document.getElementById('lightbox');if(!root)return;
+  var frame=document.getElementById('lbFrame'),who=document.getElementById('lbWho'),count=document.getElementById('lbCount'),prev=document.getElementById('lbPrev'),next=document.getElementById('lbNext'),closeButton=root.querySelector('.lightbox__close');
+  var slides=[],index=0,lastFocus,background=[],previousOverflow='';
+  function render(){var s=slides[index];frame.replaceChildren();if(s.img||s.video){var media=document.createElement(s.video?'video':'img');media.src=s.video||s.img;if(s.video){media.controls=true;media.playsInline=true;}else media.alt=s.alt||'Invitation study '+(index+1);frame.appendChild(media);}else if(window.MiidearStudy)frame.innerHTML=window.MiidearStudy(s.theme,s.variation);else frame.innerHTML='<div class="ph ph--square"></div>';count.textContent='Illustrative study · '+(index+1)+' of '+slides.length;prev.hidden=next.hidden=slides.length<2;}
+  function step(dir){index=(index+dir+slides.length)%slides.length;render();}
+  function close(){root.classList.remove('is-open');document.body.style.overflow=previousOverflow;background.forEach(function(el){el.inert=false;});background=[];frame.replaceChildren();document.removeEventListener('keydown',onKey);if(lastFocus)lastFocus.focus();}
+  function onKey(e){if(e.key==='Escape'){e.preventDefault();close();}else if(e.key==='ArrowRight'){e.preventDefault();step(1);}else if(e.key==='ArrowLeft'){e.preventDefault();step(-1);}else if(e.key==='Tab'){var items=Array.from(root.querySelectorAll('button:not([hidden]),video,a[href]')),first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}}
+  function open(c){slides=c.images&&c.images.length?c.images:[{}];index=0;who.textContent=c.name||c.couple||'Design study';lastFocus=document.activeElement;previousOverflow=document.body.style.overflow;background=Array.from(document.body.children).filter(function(el){return el!==root&&el.tagName!=='SCRIPT'&&!el.inert;});background.forEach(function(el){el.inert=true;});render();root.classList.add('is-open');document.body.style.overflow='hidden';document.addEventListener('keydown',onKey);closeButton.focus();}
+  prev.addEventListener('click',function(){step(-1);});next.addEventListener('click',function(){step(1);});root.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',close);});
+  var startX=0,startY=0;frame.addEventListener('touchstart',function(e){startX=e.touches[0].clientX;startY=e.touches[0].clientY;},{passive:true});frame.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))step(dx<0?1:-1);},{passive:true});
+  window.MiidearLightbox={open:open,close:close};
 })();

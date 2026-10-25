@@ -12,34 +12,32 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Ballet&family=Pinyon+Script&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <!-- Motion layer. Loaded in head so the gate class lands before first paint.
-       If this file is absent the site renders exactly as it does without it. -->
-  <script src="motion.js"></script>
+  <link rel="stylesheet" href="refinements.css" />
 </head>
 <body>
+  <noscript><style>@media(max-width:820px){.site-header{position:relative;height:auto;display:block;padding:1rem}.nav{position:static;visibility:visible;pointer-events:auto;transform:none;flex-direction:row;flex-wrap:wrap;padding:1rem 0;gap:1rem}.nav a:not(.btn){font-size:1rem}.nav-toggle{display:none}}</style></noscript>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header is-scrolled" id="header">
-    <a class="brand" href="index.html" aria-label="Miidear home"><span class="brand-name">Miidear</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="brand" href="index.html">Miidear</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="portfolio.html">Portfolio</a>
       <a href="experience.html">The Experience</a>
       <a href="index.html#philosophy">About</a>
       <a href="contact.html">Contact</a>
-      <a class="btn" href="booking.html">Begin Your Journey</a>
+      <a class="btn" href="booking.html">Plan a consultation</a>
     </nav>
-    <button class="nav-close" id="navClose" aria-label="Close menu"></button>
   </header>
 
   <main id="main">
     <!-- HERO -->
     <section class="page-hero">
       <div class="container reveal">
-        <div class="flourish"><span>◆</span></div>
-        <div class="script">Frequently Asked Questions</div>
+        <div class="flourish" aria-hidden="true"><span>◆</span></div>
+        <h1 class="script">Your questions, answered</h1>
         <p class="lead">Everything you might wish to know before we begin. If your question isn't here, we are only a message away.</p>
       </div>
     </section>
@@ -48,74 +46,58 @@
     <section class="section--tight container">
       <div class="faq-list" id="faqList">
         <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">How far in advance should we begin?<span class="mark">+</span></button>
+          <button class="faq-q" aria-expanded="false">How far in advance should we begin?<span class="mark" aria-hidden="true">+</span></button>
           <div class="faq-a"><div class="faq-a__inner"><p>We recommend reaching out six to nine months before your wedding date. Bespoke work is unhurried by nature, and beginning early leaves ample room for design, refinement, production, and comfortable mailing time. For elaborate suites or destination weddings, earlier still is ideal.</p></div></div>
         </div>
 
         <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">Can invitations be fully customized?<span class="mark">+</span></button>
+          <button class="faq-q" aria-expanded="false">Can invitations be fully customized?<span class="mark" aria-hidden="true">+</span></button>
           <div class="faq-a"><div class="faq-a__inner"><p>Entirely. Every commission is designed from a blank page around your story — paper, printing method, palette, typography, illustration, and finishing are all chosen for you alone. We do not work from fixed templates.</p></div></div>
         </div>
 
         <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">Do you create custom monograms?<span class="mark">+</span></button>
+          <button class="faq-q" aria-expanded="false">Do you create custom monograms?<span class="mark" aria-hidden="true">+</span></button>
           <div class="faq-a"><div class="faq-a__inner"><p>Yes — a hand-drawn monogram uniting your two names is part of nearly every commission. It becomes the signature emblem of your suite and can carry through to menus, place cards, seals, and thank-you notes.</p></div></div>
         </div>
 
         <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">Do you offer international delivery?<span class="mark">+</span></button>
+          <button class="faq-q" aria-expanded="false">Do you offer international delivery?<span class="mark" aria-hidden="true">+</span></button>
           <div class="faq-a"><div class="faq-a__inner"><p>We do. We ship worldwide with tracked, insured couriers, carefully packaged to protect delicate finishes. Delivery timelines and costs are confirmed during your consultation.</p></div></div>
         </div>
 
         <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">How long does the process take?<span class="mark">+</span></button>
+          <button class="faq-q" aria-expanded="false">How long does the process take?<span class="mark" aria-hidden="true">+</span></button>
           <div class="faq-a"><div class="faq-a__inner"><p>Most commissions span eight to twelve weeks from consultation to delivery, depending on complexity and printing methods. Hand processes such as letterpress, foil, and engraving require additional time, which we plan for together from the outset.</p></div></div>
         </div>
 
         <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">Can we schedule an in-person consultation?<span class="mark">+</span></button>
+          <button class="faq-q" aria-expanded="false">Can we schedule an in-person consultation?<span class="mark" aria-hidden="true">+</span></button>
           <div class="faq-a"><div class="faq-a__inner"><p>Of course. You are warmly welcome at the atelier in Bangkok, by appointment, where you can see and feel papers and finishes in person. If distance makes that difficult, we offer online consultations that are every bit as personal.</p></div></div>
         </div>
       </div>
 
       <div class="center reveal" style="margin-top:var(--s-5)">
         <p class="lead" style="margin:0 auto var(--s-3)">Still wondering about something?</p>
-        <a class="btn" href="contact.html">Contact the Atelier</a>
+        <a class="btn btn--ghost" href="contact.html">Contact the Atelier</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="miidear-logo.png" alt="Miidear" />
-        <p class="footer-slogan" data-content="home:footer_slogan">Crafted with intention</p>
-        <p class="footer-visit">Bangkok, Thailand · By Appointment</p>
-        <p class="footer-visit">Tuesday – Saturday · 10:00 – 18:00</p>
-      </div>
-      <div><h5>Explore</h5><ul>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="experience.html">The Experience</a></li>
-        <li><a href="index.html#philosophy">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-      </ul></div>
-      <div><h5>Visit</h5><ul>
-        <li><a href="contact.html">Bangkok, Thailand</a></li>
-      </ul></div>
-      <div><h5>Inquire</h5><ul>
-        <li><a href="booking.html">Book a Consultation</a></li>
-      </ul></div>
+      <div><p class="footer-brand">Miidear</p><p class="footer-slogan">Crafted with intention</p></div>
+      <div><h2 class="footer-heading">Explore</h2><ul><li><a href="portfolio.html">Portfolio</a></li><li><a href="experience.html">The Experience</a></li><li><a href="index.html#philosophy">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="faq.html">FAQs</a></li></ul></div>
+      <div><h2 class="footer-heading">Visit</h2><ul><li><a href="contact.html">Bangkok, Thailand</a></li><li><a href="contact.html">By Appointment</a></li></ul></div>
+      <div><h2 class="footer-heading">Inquire</h2><ul><li><a href="booking.html">Plan a consultation</a></li></ul></div>
     </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year"></span> Miidear. All rights reserved.</span>
-      <span>Bangkok · Thailand</span>
-    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Miidear. All rights reserved.</span><span>Bangkok · Thailand</span></div>
   </footer>
 
-  <script src="config.js"></script>
-  <script src="supabase-client.js"></script>
-  <script src="content.js"></script>
+  <nav class="mobile-bar" aria-label="Quick links">
+    <a href="contact.html">Contact</a><a href="portfolio.html">Portfolio</a><a href="booking.html">Book</a>
+  </nav>
+
+  <script src="studies.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
