@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Guang and House's bespoke Miidear invitation in 3D. Unfold the illustrated gates, reveal the printed card, and discover the gold foil details.">
+  <meta name="theme-color" content="#f5f2eb">
+  <title>Guang &amp; House · Invitation in motion · Miidear</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="viewer.css?v=9">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script type="module" src="viewer.js?v=11"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a href="../../portfolio.html" aria-label="Miidear portfolio"><img src="../../miidear-logo.png" alt="Miidear" width="114" height="48"></a>
+    <span class="edition">Invitation study <span class="number">01</span></span>
+    <a class="download" href="invitation.glb" download>Download 3D model <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="journey" aria-labelledby="title">
+      <div class="stage">
+        <div class="intro">
+          <p class="eyebrow">A little world, waiting to open</p>
+          <h1 id="title">Guang <span>&amp;</span> House</h1>
+          <p class="subtitle">An illustrated landscape. A story unfolding.</p>
+        </div>
+        <div class="study-views" aria-label="Model detail views">
+          <button id="viewFull" type="button" aria-pressed="true" disabled>Full invitation</button>
+          <button id="viewPrint" type="button" aria-pressed="false" disabled>Paper &amp; foil</button>
+          <button id="viewCrest" type="button" aria-pressed="false" disabled>Crest detail</button>
+        </div>
+        <div class="viewport" id="viewport">
+          <img id="fallback" src="textures/poster.jpg" alt="Closed landscape invitation with cypress trees, yellow flowers, and a gold monogram crest.">
+          <p class="loading" id="loading" role="status">Preparing your invitation…</p>
+          <canvas id="canvas" role="img" aria-label="Interactive 3D gatefold invitation. Scroll or use the opening slider to unfold the covers and reveal the printed insert."></canvas>
+        </div>
+        <div class="caption">
+          <span class="step-number" id="stepNumber">01 / 03</span>
+          <p id="stepText" aria-live="polite">The invitation, closed.</p>
+          <button id="inspect" type="button" aria-pressed="false" disabled>Inspect in 3D</button>
+        </div>
+        <div class="controls" aria-label="Invitation controls">
+          <button id="closed" type="button" disabled>Closed</button>
+          <label class="scrubber" for="progress"><span class="sr-only">Invitation opening</span><input id="progress" type="range" min="0" max="100" value="0" aria-valuetext="Closed" disabled></label>
+          <button id="opened" type="button" disabled>Unfold</button>
+          <button id="play" type="button" aria-pressed="false" disabled>Play</button>
+          <button id="reverse" type="button" aria-pressed="false" disabled>Back view</button>
+          <div class="zoom-controls" aria-label="Model magnification">
+            <button id="zoomIn" type="button" disabled>Zoom in +</button>
+            <button id="zoomOut" type="button" disabled>Zoom out −</button>
+          </div>
+        </div>
+        <div class="footnote"><span id="hint">Scroll to unfold <span aria-hidden="true">↓</span></span><span>Photo-based reconstruction · Estimated scale</span></div>
+      </div>
+    </section>
+    <section class="endnote" aria-label="About this model">
+      <p class="eyebrow">The first invitation study</p>
+      <h2>Made to be discovered.</h2>
+      <p>Reconstructed from the original invitation photographs, with hinged covers, a die-cut crest, a layered landscape pocket, and a separate printed card.</p>
+      <p class="detail">Original photographic artwork on articulated cut-paper geometry, with bevelled edges and a shaped landscape pocket. Printed surfaces retain the lighting and foil appearance in the photographs. Dimensions are estimated.</p>
+      <a href="invitation.glb" download>Keep the 3D model <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <noscript><p class="no-script">Enable JavaScript to explore the 3D invitation. You can still <a href="invitation.glb" download>download the model</a>.</p></noscript>
+</body>
+</html>
+

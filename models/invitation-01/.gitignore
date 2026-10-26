@@ -1,0 +1,13 @@
+references/
+*-contact-sheet.jpg
+contact-sheet.jpg
+inner-reference.jpg
+qa/
+__pycache__/
+tools/node_modules/
+# The GLBs embed their artwork; publish only textures used separately by the viewer.
+textures/*
+!textures/poster.jpg
+!textures/crest-foil-mask.png
+!textures/insert-foil-mask.png
+source-manifest.json
