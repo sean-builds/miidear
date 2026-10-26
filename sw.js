@@ -5,7 +5,7 @@
    CACHE_VERSION whenever you change cached files to push an update.
    All paths are root-relative to match a flat repository (all files in root).
    ========================================================================== */
-const CACHE_VERSION = 'miidear-v3';
+const CACHE_VERSION = 'miidear-v4-invitation';
 
 const PRECACHE = [
   './',
@@ -18,6 +18,7 @@ const PRECACHE = [
   './admin.html',
   './style.css',
   './refinements.css',
+  './invitation-feature.css',
   './studies.js',
   './main.js',
   './lightbox.js',
@@ -65,6 +66,9 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (!sameOrigin) return; // let cross-origin (Google Fonts) pass through
+
+  // Large 3D models use the browser's HTTP cache instead of Cache Storage.
+  if (/\.glb$/i.test(new URL(req.url).pathname)) return;
 
   // Assets: cache-first, refresh in background.
   event.respondWith(
