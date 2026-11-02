@@ -10,3 +10,5 @@ The Grand Conservatory is an original illustrative wedding setting, not a photog
 The template is available as **The Grand Conservatory**. Existing local projects remain as saved. A new template creates a separate document. Its flowers, imagery, lettering, crest, borders and text are individual editable objects. The original six suites remain available.
 
 Core monogram letters stay vector paths. The floral frame is a transparent raster asset, and the scene is a raster illustration. PNG exports flatten the chosen page; SVG and project exports retain the representation selected by the author. Current-page SVG exports embed raster images and preserve vector ornament and outlined initials.
+
+The illustrated revision adds atelier-botanical-arch.svg and atelier-garden-engraving.svg, authored as SVG paths using the original Miidear botanical and conservatory primitives. No raster generator or third-party artwork was used for these two assets.

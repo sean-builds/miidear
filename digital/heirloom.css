@@ -1,0 +1,69 @@
+/* Engraved garden on a single uninterrupted vellum surface. */
+.grand-invitation{background:var(--paper)}
+.grand-invitation .arrival{background:var(--paper);color:var(--ink)}
+.grand-invitation .grand-backdrop{background:linear-gradient(#f8f1e388,#f8f1e300),url('assets/atelier-garden-engraving.svg') center bottom/cover no-repeat;opacity:.6}
+.grand-cover-heading,.grand-cover-foot{color:var(--ink)}
+.grand-cover-heading>span:last-child{color:#785c2f}
+.grand-invitation .arrival:after{border-color:#b8996066;inset:25px}
+.grand-gates{width:min(480px,52svh,calc(100vw - 65px));filter:drop-shadow(0 20px 35px #75644028)}
+.gate-leaf{background:linear-gradient(100deg,#e6dcc9,#fffaf0 45%,#e8deca);border-color:#b89960}
+.gate-right{background:linear-gradient(-100deg,#e6dcc9,#fffaf0 45%,#e8deca)}
+.gate-leaf>svg{opacity:.28}
+.gate-florals{filter:none}
+.gate-letter:before{background:none}
+.gate-letter h1{font-size:clamp(34px,4.9svh,48px)}
+.grand-invitation .gate-letter .arrival-monogram{width:145px;height:145px}
+.grand-invitation .wax-seal{background:radial-gradient(ellipse at 35% 20%,#c1a46b,#95733b);border-color:#c8ac78;color:#fff5d6;box-shadow:0 8px 20px #70603938,inset 0 0 0 2px #e8d7ac}
+.grand-invitation .open-letter{color:#183b46;background:#fffaf0;border:1px solid #b8996066;min-height:48px;padding:10px 18px}
+.grand-hero{background:var(--paper);color:var(--ink);min-height:850px;isolation:isolate}
+.grand-hero-scene{background:linear-gradient(var(--paper) 2%,#f8f1e300 50%,var(--paper) 97%),url('assets/atelier-garden-engraving.svg') center bottom/cover no-repeat;opacity:.75}
+.grand-hero:before{border:0}.grand-hero:after{display:none!important}
+.grand-hero-copy{text-shadow:none;padding-bottom:175px}
+.grand-hero-copy>p:first-child,.grand-scroll{color:#785c2f}
+.grand-hero h1 em{color:#95733b}
+.grand-hero-details{color:var(--ink);background:#f8f1e3d9;border:0;border-top:1px solid #b8996080;border-bottom:1px solid #b8996080}
+.grand-scroll{bottom:55px}
+.grand-invitation .invitation-nav{background:#f8f1e3f5;color:var(--ink);border:0;box-shadow:0 6px 20px #f8f1e3}
+.grand-invitation .invitation-nav>a{color:#785c2f}
+.grand-invitation .opening-note,.grand-invitation .day-details,.grand-invitation .dress-section,.grand-invitation .rsvp-section,.grand-invitation .invitation-footer{background:var(--paper);color:var(--ink);border:0}
+.grand-invitation .day-details .section-number,.grand-invitation .day-details h2 em,.grand-invitation .day-countdown strong,.grand-invitation .timeline-event time{color:#85642c}
+.grand-invitation .venue-address{color:var(--ink)}
+.grand-invitation .day-details{padding-top:90px}.grand-invitation .dress-section{padding-top:100px}
+.grand-invitation .invitation-footer small{color:#785c2f}
+.ceremony-ready .dress-section:after{background-image:url('assets/atelier-botanical-arch.svg');opacity:.24}
+.grand-invitation .rsvp-art{background-image:url('assets/atelier-botanical-arch.svg');opacity:.23}
+.grand-invitation .rsvp-inner{background:transparent;border:0;box-shadow:none;border-radius:0}
+.ceremony-ready .rsvp-inner{box-shadow:none;border:0;padding-top:55px}
+.ceremony-ready .arrival.is-opening{transition:opacity .7s var(--ceremony-curve) 2.05s}
+.ceremony-ready .gate-leaf{transition:transform 2s cubic-bezier(.5,0,.12,1) .4s}
+.ceremony-ready .is-opening .gate-left{transform:rotateY(-125deg)}
+.ceremony-ready .is-opening .gate-right{transform:rotateY(125deg)}
+.ceremony-ready .is-opening .ceremony-floral{transition-delay:.4s,.8s}
+.ceremony-ready .is-opening .gate-letter{transition:opacity .55s var(--ceremony-curve),transform .9s var(--ceremony-curve);transform:translateY(-10px)}
+.ceremony-ready.invitation-open .grand-hero-copy>*{transition-delay:1.85s}
+.ceremony-ready.invitation-open .grand-hero-copy>h1{transition-delay:2s}
+.ceremony-ready.invitation-open .grand-hero-copy>p:nth-of-type(2){transition-delay:2.2s}
+.ceremony-ready.invitation-open .grand-hero-details{transition-delay:2.35s}
+.ceremony-ready .invitation-section{position:relative;isolation:isolate;overflow:clip}
+.chapter-ornament{width:120px;height:130px;margin:0 auto 25px;color:#9b7b45;opacity:.75;pointer-events:none}
+.chapter-ornament svg{width:100%;height:100%}
+.ceremony-ready .invitation-section h2{overflow:hidden;transform:none;filter:none}
+.ceremony-ready .invitation-section h2 em{display:block;transform:translateY(38px) rotate(2deg);opacity:0;transition:transform 1.4s var(--ceremony-curve) .12s,opacity .9s var(--ceremony-curve) .12s;transform-origin:center left}
+.ceremony-ready .invitation-section h2.ceremony-seen em{transform:none;opacity:1}
+.ceremony-ready .dress-color span{transform:rotate(-5deg) translateY(15px);transition:transform 1.4s var(--ceremony-curve)}
+.ceremony-ready .dress-color.ceremony-seen span{transform:none}
+.ceremony-ready .chapter-ornament{transform:translateY(24px) scale(.94);transition:transform 1.7s var(--ceremony-curve),opacity 1s var(--ceremony-curve);opacity:0}
+.ceremony-ready .chapter-ornament.ceremony-seen{transform:none;opacity:.75}
+.motion-control{min-height:44px;min-width:88px}
+.ceremony-still .invitation-section h2 em,.ceremony-keyboard .invitation-section h2 em,.instant-invitation .invitation-section h2 em,.ceremony-still .dress-color span{opacity:1!important;transform:none!important;transition:none!important}
+@media(max-width:600px){.grand-invitation .arrival:after{inset:15px}.grand-cover-heading{top:55px}.grand-gates{width:min(340px,49svh,calc(100vw - 60px))}.grand-invitation .gate-letter .arrival-monogram{width:115px;height:115px}.gate-letter h1{font-size:34px}.gate-letter p{font-size:14px}.grand-hero{min-height:850px}.grand-hero-copy{padding:60px 30px 190px}.grand-hero-scene{background-size:auto,auto 65%;background-repeat:no-repeat}.grand-invitation .day-details,.grand-invitation .dress-section{padding-top:75px}.grand-invitation .invitation-section h2{font-size:55px}.grand-invitation .invitation-section h2 em{font-size:65px}.grand-invitation .sample-bar{background:#183b46}.grand-cover-foot{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.ceremony-ready .invitation-section h2 em,.ceremony-ready .dress-color span,.ceremony-ready .chapter-ornament{opacity:1!important;transform:none!important;transition:none!important}}
+
+.grand-invitation .grand-backdrop{opacity:.28}.grand-invitation .gate-letter{top:18%}.grand-invitation .gate-letter .arrival-monogram{margin-bottom:26px}.grand-invitation .gate-letter h1{font-size:clamp(38px,5.5svh,54px)}
+.chapter-ornament svg path{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 2.2s cubic-bezier(.22,1,.36,1)}.chapter-ornament.ceremony-seen svg path,.ceremony-still .chapter-ornament svg path,.ceremony-keyboard .chapter-ornament svg path{stroke-dashoffset:0}
+@media(prefers-reduced-motion:reduce){.chapter-ornament svg path{stroke-dashoffset:0!important}}
+
+.grand-hero:after{display:block!important;content:'';position:absolute;inset:-12% -2%;background:url('assets/atelier-botanical-arch.svg') center/auto 125% no-repeat;opacity:.8;pointer-events:none;z-index:-1;mask-image:linear-gradient(#000 65%,transparent 98%)}
+.grand-invitation .day-details:before{display:block;content:'';position:absolute;inset:0;border:0;background:url('assets/atelier-botanical-arch.svg') center/ min(1500px,160%) auto no-repeat;opacity:.22;z-index:-1;mask-image:linear-gradient(transparent,#000 20%,#000 75%,transparent)}
+.grand-invitation .day-timeline:before{background:#9b7b4555}.grand-invitation .day-actions .letter-button{border-color:#9b7b4580;color:var(--ink)}
+@media(max-width:600px){.grand-hero:after{inset:0 -20%;background-size:auto 90%;opacity:.48}.grand-hero h1{font-size:100px}.grand-invitation .day-details:before{background-size:auto 100%;opacity:.12}}

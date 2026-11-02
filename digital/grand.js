@@ -19,7 +19,7 @@
     let bars='';for(let i=0;i<6;i++){const x=27+i*45;bars+='<path d="M'+x+' 133V738" stroke-width="1"/><path d="M'+x+' 140l-6 14 6-4 6 4Z" fill="currentColor"/>';}
     return A.svg('<g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 780V154C13 70 117 18 299 18V780Z"/><path d="M24 766V155C24 79 121 31 286 31V766Z" opacity=".6"/><path d="M13 175H299M13 188H299M13 654H299M13 666H299M13 741H299M13 751H299"/>'+bars+'<path d="M28 115Q110 43 285 43M46 128Q109 76 285 63M155 201C63 230 55 340 153 346C237 352 249 237 158 245C94 251 111 316 153 309C184 304 180 270 158 276M155 346C72 394 62 498 158 505C246 511 249 407 164 413C109 418 116 482 156 474C186 468 180 443 161 448M155 506C77 540 70 631 156 637C235 644 243 551 164 552C122 553 117 606 154 608M25 680Q155 762 286 680M25 721Q155 640 286 721"/><g stroke-width=".8" opacity=".65"><path d="M21 204L284 640M21 640L284 204M21 334L218 654M88 190L285 510M21 510L218 190M88 654L285 334"/></g></g>',312,800);
   }
-  A.library.unshift({key:'grand-frame',name:'The grand floral arch',category:'Watercolor',image:'assets/grand-floral-frame.webp',width:1024,height:1536},{key:'grand-scene',name:'The candlelit conservatory',category:'Scenes',image:'assets/grand-conservatory-scene.webp',width:1672,height:941},{key:'grand-cartouche',name:'Heirloom gold cartouche',category:'Frames',svg:()=>cartouche()},{key:'grand-border',name:'Palace invitation border',category:'Frames',svg:()=>border()});
+  A.library.unshift({key:'grand-frame',name:'The grand floral arch',category:'Watercolor',image:'assets/atelier-botanical-arch.svg',width:1024,height:1536},{key:'grand-scene',name:'The candlelit conservatory',category:'Scenes',image:'assets/atelier-garden-engraving.svg',width:1672,height:941},{key:'grand-cartouche',name:'Heirloom gold cartouche',category:'Frames',svg:()=>cartouche()},{key:'grand-border',name:'Palace invitation border',category:'Frames',svg:()=>border()});
   D.themes.unshift({key:'grand',name:'The Grand Conservatory',description:'Palace gardens, sculpted florals & heirloom gold',paper:palette.paper,ink:palette.ink,gold:palette.gold});
   const previousTemplate=D.template;
   async function template(){
@@ -37,15 +37,15 @@
     text('request the pleasure of your company\nat the celebration of their marriage',350,650,21,{width:350,lineHeight:1.4});
     text('Saturday, 20 February 2027',350,745,26,{binding:'date',width:400});text('The Glasshouse',350,798,23,{binding:'venue',width:350});
     const scene=await D.artwork('grand-scene');scene.scaleToHeight(1000);scene.set({left:350,top:1350,originX:'center',originY:'center'});c.add(scene);
-    c.add(D.identify(new F.Rect({left:0,top:850,width:700,height:1000,fill:'#071d2b',opacity:.32}),'Evening atmosphere'));
+    c.add(D.identify(new F.Rect({left:0,top:850,width:700,height:1000,fill:palette.paper,opacity:.12}),'Evening atmosphere'));
     function fade(name,left,top,width,height,from,to,vertical=true){const gradient=new F.Gradient({type:'linear',coords:{x1:0,y1:0,x2:vertical?0:width,y2:vertical?height:0},colorStops:[{offset:0,color:palette.paper,opacity:from},{offset:1,color:palette.paper,opacity:to}]});c.add(D.identify(new F.Rect({left,top,width,height,fill:gradient,strokeWidth:0}),name));}
     fade('Paper into the evening',0,850,700,200,1,0);fade('Evening into the garden',0,1670,700,180,0,1);
     fade('Soft evening edge, left',0,850,90,1000,1,0,false);fade('Soft evening edge, right',610,850,90,1000,0,1,false);
     const shadow=new F.Shadow({color:'rgba(0,0,0,.65)',blur:9,offsetY:2});
-    text('Where forever begins.',350,1100,65,{fontFamily:'Pinyon Script',fill:'#fffaf1',width:530,shadow});
-    text(doc.settings.story,350,1270,31,{binding:'story',fill:'#fffaf1',width:430,lineHeight:1.5,shadow});
-    c.add(D.identify(new F.Rect({left:123,top:1480,width:454,height:214,fill:'#fffaf1',opacity:.96,rx:2}),'The ceremony details'));
-    c.add(D.identify(new F.Rect({left:132,top:1489,width:436,height:196,fill:'transparent',stroke:palette.gold,strokeWidth:.7}),'Ceremony gold rule'));
+    text('Where forever begins.',350,1100,65,{fontFamily:'Pinyon Script',fill:palette.ink,width:530});
+    text(doc.settings.story,350,1270,31,{binding:'story',fill:palette.ink,width:430,lineHeight:1.5});
+    c.add(D.identify(new F.Rect({left:123,top:1480,width:454,height:214,fill:palette.paper,opacity:0,rx:2}),'The ceremony details'));
+    c.add(D.identify(new F.Rect({left:132,top:1489,width:436,height:196,fill:'transparent',stroke:palette.gold,strokeWidth:0,opacity:0}),'Ceremony gold rule'));
     text('The ceremony',350,1508,23,{fontStyle:'italic'});text('17:00',350,1547,44,{binding:'time'});text('The Glasshouse',350,1616,25,{binding:'venue'});
     await canopy(1830);fade('The garden settles into the paper',0,2560,700,140,0,1);
     c.add(D.place(await D.svgObject(mono,'Your heirloom monogram',{monogramOptions:options}),350,2000,155));
@@ -55,7 +55,7 @@
     c.renderAll();doc.pages=[{id:C.uid(),name:'Your flowing invitation',width:700,height:2700,background:palette.paper,canvas:D.serialize(c)}];await c.dispose();return C.validate(doc);
   }
   D.template=(key='grand')=>key==='grand'?template():previousTemplate(key);
-  function cover(){return '<div class="grand-backdrop" aria-hidden="true"></div><div class="grand-cover-heading"><span>A wedding invitation</span><span id="arrivalDate"></span></div><div class="grand-gates"><div class="gate-leaf gate-left" aria-hidden="true">'+gate()+'</div><div class="gate-leaf gate-right" aria-hidden="true">'+gate()+'</div><div class="gate-letter"><div id="arrivalMonogram" class="arrival-monogram"></div><h1 id="arrivalNames"></h1><p>request the pleasure of your company</p></div><button class="wax-seal" id="openInvitation" aria-label="Open your wedding invitation"><span id="sealInitials"></span><small>OPEN</small></button><button class="open-letter" id="openLetter">Open our celebration <span>↓</span></button><img class="gate-florals" src="'+C.asset('assets/grand-floral-frame.webp')+'" alt="" aria-hidden="true"></div><p class="grand-cover-foot">Some days are meant to be unforgettable.</p>';}
+  function cover(){return '<div class="grand-backdrop" aria-hidden="true"></div><div class="grand-cover-heading"><span>A wedding invitation</span><span id="arrivalDate"></span></div><div class="grand-gates"><div class="gate-leaf gate-left" aria-hidden="true">'+gate()+'</div><div class="gate-leaf gate-right" aria-hidden="true">'+gate()+'</div><div class="gate-letter"><div id="arrivalMonogram" class="arrival-monogram"></div><h1 id="arrivalNames"></h1><p>request the pleasure of your company</p></div><button class="wax-seal" id="openInvitation" aria-label="Open your wedding invitation"><span id="sealInitials"></span><small>OPEN</small></button><button class="open-letter" id="openLetter">Open our celebration <span>↓</span></button><img class="gate-florals" src="'+C.asset('assets/atelier-botanical-arch.svg')+'" alt="" aria-hidden="true"></div><p class="grand-cover-foot">Some days are meant to be unforgettable.</p>';}
   function hero(doc){const s=doc.settings,names=s.names.split(/\s*(?:&| and )\s*/i);return '<section class="grand-hero" aria-label="'+C.escape(s.names)+' wedding"><div class="grand-hero-scene" aria-hidden="true"></div><div class="grand-hero-copy"><p>'+C.escape(s.hosts)+'</p><h1><span>'+C.escape(names[0])+'</span>'+(names[1]?'<em>&</em><span>'+C.escape(names.slice(1).join(' & '))+'</span>':'')+'</h1><p>invite you to celebrate their wedding</p><div class="grand-hero-details"><span>'+C.escape(C.weddingDate(doc))+'</span><i></i><span>'+C.escape(s.venue)+'</span></div></div><a class="grand-scroll" href="#pages">Our invitation <span>↓</span></a></section>';}
   window.MiiGrand={palette,cartouche,border,gate,template,cover,hero};
 })();
