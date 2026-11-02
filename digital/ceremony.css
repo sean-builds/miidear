@@ -1,0 +1,40 @@
+/* A rare, deliberate opening: unseal, part the florals, enter the candlelit garden. */
+.ceremony-ready{--ceremony-curve:cubic-bezier(.19,1,.22,1)}
+.ceremony-atmosphere{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:4}
+.ceremony-light{position:absolute;inset:-30%;background:radial-gradient(ellipse at 50% 48%,#fff1c500, #fff1c500 20%,#fff1c53b 35%,transparent 60%);opacity:0;transform:scale(.95)}
+.ceremony-silk{position:absolute;inset:-10% 50% -10% -20%;background:linear-gradient(100deg,transparent 35%,#e5d3ad0d 45%,#fff6db55 52%,#c8ae7955 56%,transparent 67%);opacity:0;transform:translateX(0);filter:blur(5px)}
+.silk-right{inset:-10% -20% -10% 50%;transform:scaleX(-1)}
+.ceremony-ready .gate-florals:not(.ceremony-floral){visibility:hidden}
+.ceremony-floral.floral-left{clip-path:inset(0 50% 0 0);transform-origin:20% 60%}
+.ceremony-floral.floral-right{clip-path:inset(0 0 0 50%);transform-origin:80% 60%}
+.ceremony-ready .arrival.is-opening{transition:opacity .45s var(--ceremony-curve) 1.65s}
+.ceremony-ready .gate-leaf{transition:transform 1.8s cubic-bezier(.42,0,.12,1) .15s}
+.ceremony-ready .is-opening .gate-left{transform:rotateY(-112deg)}
+.ceremony-ready .is-opening .gate-right{transform:rotateY(112deg)}
+.ceremony-ready .is-opening .ceremony-floral{transition:transform 1.8s var(--ceremony-curve) .12s,opacity 1.25s var(--ceremony-curve) .35s;opacity:0}
+.ceremony-ready .is-opening .floral-left{transform:translateX(-22%) rotate(-5deg) scale(1.09)}
+.ceremony-ready .is-opening .floral-right{transform:translateX(22%) rotate(5deg) scale(1.09)}
+.ceremony-ready .is-opening .wax-seal{transform:translate(-50%,-50%) translateY(12px) rotate(-12deg);transition:transform .5s var(--ceremony-curve),opacity .3s var(--ceremony-curve);opacity:0}
+.ceremony-ready .is-opening .grand-backdrop{transform:scale(1.07);transition:transform 2.1s var(--ceremony-curve)}
+.ceremony-ready .is-opening .ceremony-light{animation:ceremony-light 2.1s var(--ceremony-curve) both}
+.ceremony-ready .is-opening .silk-left{animation:silk-left 1.9s var(--ceremony-curve) both}
+.ceremony-ready .is-opening .silk-right{animation:silk-right 1.9s var(--ceremony-curve) both}
+@keyframes ceremony-light{0%{opacity:0;transform:scale(.95)}35%{opacity:.8}100%{opacity:0;transform:scale(1.12)}}
+@keyframes silk-left{0%{opacity:0;transform:translateX(0)}30%{opacity:.65}100%{opacity:0;transform:translateX(-65%)}}
+@keyframes silk-right{0%{opacity:0;transform:scaleX(-1)}30%{opacity:.65}100%{opacity:0;transform:translateX(65%) scaleX(-1)}}
+.ceremony-ready .grand-hero-scene{inset:-32px;transform:scale(1.045)}
+.ceremony-ready .grand-hero-copy{transition:none;opacity:1;transform:none}
+.ceremony-ready .grand-hero-copy>*{opacity:0;transform:translateY(18px);filter:blur(3px);transition:opacity 1s var(--ceremony-curve),transform 1.2s var(--ceremony-curve),filter 1.2s var(--ceremony-curve)}
+.ceremony-ready.invitation-open .grand-hero-copy>*{opacity:1;transform:none;filter:none;transition-delay:1.15s}
+.ceremony-ready.invitation-open .grand-hero-copy>h1{transition-delay:1.4s}
+.ceremony-ready.invitation-open .grand-hero-copy>p:nth-of-type(2){transition-delay:1.65s}
+.ceremony-ready.invitation-open .grand-hero-details{transition-delay:1.8s}
+.ceremony-reveal{opacity:0;transform:translate3d(0,22px,0);filter:blur(2px);transition:opacity .8s var(--ceremony-curve) var(--reveal-delay,0ms),transform 1s var(--ceremony-curve) var(--reveal-delay,0ms),filter .8s var(--ceremony-curve) var(--reveal-delay,0ms)}
+.ceremony-reveal.ceremony-seen{opacity:1;transform:none;filter:none}
+.ceremony-ready .dress-section:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('assets/grand-floral-frame.webp') center/ min(1150px,135%) auto no-repeat;opacity:.17;mask-image:linear-gradient(transparent,#000 20%,#000 70%,transparent)}
+.ceremony-ready .rsvp-inner{box-shadow:0 35px 95px #24463b1c,0 0 0 7px #fffaf140; border-radius:48% 48% 2px 2px/85px 85px 2px 2px;padding-top:80px}
+.motion-control{position:fixed;right:14px;bottom:14px;z-index:80;border:1px solid #bda36b99;border-radius:30px;padding:9px 13px;background:#102d3de8;color:#f4e8cb;font:10px var(--sans);cursor:pointer}
+.ceremony-still .ceremony-reveal,.ceremony-keyboard .ceremony-reveal,.instant-invitation .ceremony-reveal,.ceremony-still .grand-hero-copy>*,.instant-invitation .grand-hero-copy>*{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+.ceremony-still .arrival.is-opening,.instant-invitation .arrival.is-opening{transition:none!important}
+.ceremony-still .is-opening *,.instant-invitation .is-opening *{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.ceremony-ready *, .ceremony-ready *:before,.ceremony-ready *:after{animation:none!important;transition:none!important}.ceremony-reveal,.ceremony-ready .grand-hero-copy>*{opacity:1!important;transform:none!important;filter:none!important}.ceremony-ready .grand-hero-scene{transform:none!important}}

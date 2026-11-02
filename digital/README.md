@@ -2,7 +2,7 @@
 
 Three isolated routes, with no incoming links added to the normal website:
 
-- `../digitalinv/`: The Conservatory sample, or a published design using `?id=…` and a private household key in the URL fragment.
+- `../digitalinv/`: The Grand Conservatory sample, or a published design using `?id=…` and a private household key in the URL fragment.
 - `../digitalbuild/`: blank canvas or seven editable suites. Templates, vector initials, original flowers, text, uploads, color cutouts, layers, grouping, alignment, page ordering, wedding settings, local projects, PNG/SVG/JSON exports and guest management.
 - `../digitaldashboard/`: a clearly labeled sample, or a wedding-scoped guest book using its private access link. Search, response/diet filters, meal totals, CSV and print.
 
@@ -26,4 +26,6 @@ Fabric and OpenType.js retain their MIT notices in vendor/. Fonts retain their G
 
 ## Validation
 
-20 Node service/data tests cover authorization, wedding isolation, token revocation, deadlines, capacity, menu enforcement, response replacement, draft separation, Sheets chunking, formula escaping and cutout alpha. 48 browser checks cover every template page's serialization round trip, vector imports, SVG safety, library artwork, IndexedDB and transformed ungrouping. UI checks additionally cover blank-start editing, monogram creation, undo/redo, saved-project reload, preview, export and dashboard filtering. The owner-approved Google service is deployed. A live two-person reply was saved through the guest page and appeared with separate meals and dietary notes in the private couple dashboard. The atelier sign-in entry point is available in the header and at digitalbuild/#account.
+20 Node service/data tests cover authorization, wedding isolation, token revocation, deadlines, capacity, menu enforcement, response replacement, draft separation, Sheets chunking, formula escaping and cutout alpha. 46 browser checks cover every template page's serialization round trip, vector imports, SVG safety, library artwork, IndexedDB and transformed ungrouping. UI checks additionally cover blank-start editing, monogram creation, undo/redo, saved-project reload, preview, export and dashboard filtering. The owner-approved Google service is deployed. A live two-person reply was saved through the guest page and appeared with separate meals and dietary notes in the private couple dashboard. The atelier sign-in entry point is available in the header and at digitalbuild/#account.
+
+The Grand Conservatory is one 700 × 2700 editable flowing composition. The guest presentation has a ceremonial, user-triggered gate opening, divided floral depth, warm light, staggered section reveals and a native-scroll scene offset. A visible Motion control, reduced-motion support and immediate keyboard opening preserve access. Countdown seconds update locally, without per-second service requests.

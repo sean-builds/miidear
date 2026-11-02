@@ -35,3 +35,11 @@ The linked research review records each paper's finding, design application and 
 | R20 sdprdh/wedding-invitation | `service.js`, `server/Code.gs`, `couple.js`: private Sheets source, decorated data view |
 
 The research corpus and suitability judgments are design guidance. They do not establish that this product is scientifically optimal or that an upstream repository's security has been certified.
+
+## Continuous guest presentation and ceremonial motion
+
+The Grand Conservatory now uses one editable 700 × 2700 composition rather than three displayed cards. Guests scroll natively through blended paper, gardens and evening photography. Countdown seconds update in the browser. The existing exact server deadline still governs replies.
+
+The user referenced https://lusion.co/ for immersive polish; its primary site describes integrated visual storytelling, motion and interactive journeys. This application interprets those principles through original wedding florals, antique gold, a split botanical arch, perspective gates and a warm-light passage, without importing its code or visual motifs. One-time chapter reveals orient the guest. A visible motion toggle, operating-system reduced motion and instant keyboard opening preserve access; RSVP editing remains immediate.
+
+Validation: 46 browser document checks and 20 service/data tests passed. Live Google Sheets JSON-quoted storage was read back through a private fictional guest link. The fictional test RSVP was closed afterwards. The ceremony was visually checked at desktop and 390px, with no horizontal phone overflow; Motion off exposes all 24 reveal targets, and keyboard opening focuses the main invitation immediately.
