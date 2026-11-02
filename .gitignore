@@ -2,3 +2,6 @@
 Thumbs.db
 *.log
 node_modules/
+
+# Everything the live app does not need: team, tests, notes, research, dev tools. Never committed.
+NO UPLOAD/
