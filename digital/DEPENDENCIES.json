@@ -1,0 +1,86 @@
+[
+  {
+    "url": "https://cdn.jsdelivr.net/npm/fabric@6.7.1/dist/index.min.js",
+    "path": "digital/vendor/fabric-6.7.1.min.js",
+    "bytes": 315938,
+    "sha256": "9cd364b5369d2e8eac386c99ea1d61dba64a352d67fa5187d229fe53327f81b1"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/fabric@6.7.1/LICENSE",
+    "path": "digital/vendor/FABRIC-LICENSE.txt",
+    "bytes": 961,
+    "sha256": "d8f93c5639b2d11680911dff6e91567af4c44dd79a87f8ff2e85d1c8b91f9702"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js",
+    "path": "digital/vendor/opentype-1.3.4.min.js",
+    "bytes": 171001,
+    "sha256": "c0f9c7ca85e18075a8819e5fe2dee6e1d535f9a2269f5314f36cce94a183adba"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/LICENSE",
+    "path": "digital/vendor/OPENTYPE-LICENSE.txt",
+    "bytes": 1085,
+    "sha256": "a5b87c9bc191e7f9c06b07bd7cbbed3ed846dfdb50e859484b2c245aa1ab2e61"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/pinyonscript/PinyonScript-Regular.ttf",
+    "path": "digital/assets/fonts/PinyonScript-Regular.ttf",
+    "bytes": 151412,
+    "sha256": "4aab130a6ed27f8b8117738c84a5602edf9300cdcc0651a9a65bf96f451ac29a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/pinyonscript/OFL.txt",
+    "path": "digital/assets/fonts/pinyonscript-OFL.txt",
+    "bytes": 4384,
+    "sha256": "61d07cb0eaa943943648df2b11d0c2210e772053c192871e13f680b53fe0b77e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/italiana/Italiana-Regular.ttf",
+    "path": "digital/assets/fonts/Italiana-Regular.ttf",
+    "bytes": 31828,
+    "sha256": "0ad271d9cd42a57cd5c5fa483ae2406a8138b95acb2a43eb73a8d37b7291fee9"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/italiana/OFL.txt",
+    "path": "digital/assets/fonts/italiana-OFL.txt",
+    "bytes": 4393,
+    "sha256": "486c4d5b9baf0d0ba5546ef3c43fcfe22c062299ab6948045a43efffe4b0f74b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/greatvibes/GreatVibes-Regular.ttf",
+    "path": "digital/assets/fonts/GreatVibes-Regular.ttf",
+    "bytes": 457588,
+    "sha256": "8d509802186f1b51572531ecf313e8098f9a5bfdfaca93f0c9b34467f9982d15"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/greatvibes/OFL.txt",
+    "path": "digital/assets/fonts/greatvibes-OFL.txt",
+    "bytes": 4399,
+    "sha256": "61093a21f5e63dedf54222b3c09997e54c0fe43e3851d21386e02ddcbc246d49"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf",
+    "path": "digital/assets/fonts/CormorantGaramond[wght].ttf",
+    "bytes": 1195560,
+    "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/OFL.txt",
+    "path": "digital/assets/fonts/cormorantgaramond-OFL.txt",
+    "bytes": 4387,
+    "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/jost/Jost%5Bwght%5D.ttf",
+    "path": "digital/assets/fonts/Jost[wght].ttf",
+    "bytes": 134996,
+    "sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/jost/OFL.txt",
+    "path": "digital/assets/fonts/jost-OFL.txt",
+    "bytes": 4384,
+    "sha256": "1af3438a4d5f0ed2bdbc5751a5a67ebf6d537334161184b7fbb68503ef0ea0c5"
+  }
+]
