@@ -33,3 +33,7 @@ The Grand Conservatory is one 700 × 2700 editable flowing composition. The gues
 ## Illustrated ceremony refinement
 
 The current Grand sample uses original vector botanical and architectural SVG art, continuous vellum backgrounds, a staged unsealing and gate opening, drawn chapter crests and unfolding titles. The loading shell prevents the legacy envelope from flashing during startup. See MOTION-REFINEMENT.md for primary-source research and its specific applications. The sample RSVP is interactive and explicitly tab-local; private links retain Google-backed saving. Both sample accept/decline and a live fictional guest acceptance were retested successfully. Saved custom projects retain their authored artwork.
+
+## Current portfolio-led suite
+
+The Secret Garden is the current Grand-theme sample and new editable template. It draws on Miidear's watercolor storytelling and sculptural paper construction, with independent foreground botanicals, scroll-linked arch expansion, a curved paper passage and word-level chapter motion. See PORTFOLIO-MOTION.md for inspected references, downloaded repository/license audit, generation prompts and checks. Older saved projects retain their previously published library asset mappings.

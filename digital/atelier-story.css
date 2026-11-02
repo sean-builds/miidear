@@ -1,0 +1,71 @@
+/* Miidear: painted stories, die-cut paper, sculpted initials and confident gold. */
+.grand-invitation{--atelier-curve:cubic-bezier(.2,.75,.15,1);background:var(--paper)}
+.grand-invitation .arrival{background:#153e36;min-height:100svh;padding:80px 30px;color:#f7edda}
+.grand-invitation .grand-backdrop{background:linear-gradient(#173f36a8,#173f36cc),url('assets/miidear-watercolor-garden.webp') center/cover;opacity:1;filter:none}
+.grand-invitation .arrival:after{border-color:#d9bd7f77;inset:23px}
+.grand-cover-heading,.grand-cover-foot,.grand-cover-heading>span:last-child{color:#f3e4c2}
+.grand-invitation .grand-gates{width:min(830px,calc(100vw - 130px));height:min(660px,76svh);aspect-ratio:auto;min-height:490px;filter:drop-shadow(0 30px 45px #071d2b66)}
+.grand-invitation .gate-left{border-radius:55% 0 0 0/25% 0 0 0;background:linear-gradient(90deg,#e2d6bc,#fff9ec 25%,#faf1dc 97%,#b19a70)}
+.grand-invitation .gate-right{border-radius:0 55% 0 0/0 25% 0 0;background:linear-gradient(-90deg,#e2d6bc,#fff9ec 25%,#faf1dc 97%,#b19a70)}
+.gate-leaf:after{content:'';position:absolute;inset:0;background:url('assets/miidear-watercolor-garden.webp') center bottom/auto 100% no-repeat;mask-image:linear-gradient(transparent 25%,#000 95%);opacity:.48;pointer-events:none}
+.gate-left:after{background-position:left bottom}.gate-right:after{background-position:right bottom}
+.grand-invitation .gate-letter{top:10%;left:10%;right:10%}
+.grand-invitation .gate-letter:before{background:radial-gradient(ellipse,#fff9ec 30%,#fff9ecd9 60%,transparent 75%);inset:-15% -10% -15%}
+.grand-invitation .gate-letter .arrival-monogram{width:165px;height:165px;margin-bottom:15px;filter:drop-shadow(1px 2px 0 #fff9ec) drop-shadow(0 5px 3px #8b704126)}
+.grand-invitation .gate-letter h1{font-size:clamp(48px,6vw,76px);margin-bottom:14px;color:#24473f}
+.grand-invitation .gate-letter p{font-size:19px;max-width:none}
+.grand-invitation .wax-seal{top:76%;width:77px;height:77px;background:radial-gradient(ellipse at 30% 20%,#dfc88f,#98743b 90%);color:#fff3ce;border-color:#c5a76b}
+.grand-invitation .open-letter{bottom:4%;border:0;background:#fff9eced;min-height:44px}
+.grand-invitation .gate-florals{inset:-11% -8%;width:116%;height:122%;object-fit:fill;filter:drop-shadow(0 5px 3px #23433820)}
+.grand-invitation .sample-bar{background:#133e36ed;color:#fff4d8}
+.grand-invitation .grand-hero{height:175svh;min-height:1150px;display:block;overflow:clip;background:var(--paper);isolation:isolate}
+.grand-hero:before,.grand-hero:after{display:none!important}
+.atelier-stage{position:sticky;top:0;height:100svh;min-height:720px;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.grand-invitation .grand-hero-scene{inset:0;background:linear-gradient(#faf6ed44,#faf6ed00 80%,var(--paper)),url('assets/miidear-watercolor-garden.webp') center/cover no-repeat;opacity:1;z-index:-2;transform-origin:center 60%}
+.grand-hero-copy{position:relative;z-index:2;text-shadow:0 1px 20px #fff9ec;padding:50px 20px 160px;width:min(760px,90%)}
+.grand-hero-copy:before{content:'';position:absolute;inset:0 -20% -5%;background:radial-gradient(ellipse at 50% 25%,#fff9eceb 10%,#fff9ec9c 38%,transparent 70%);z-index:-1;pointer-events:none}
+.grand-hero-copy>p:first-child{font-size:22px;color:#645533;margin-bottom:25px}
+.grand-hero h1{font-size:clamp(110px,12vw,185px);color:#24473f;line-height:.88}
+.grand-hero h1 em{font-size:35px;color:#90703b;margin:8px 0}
+.grand-hero-copy>p:nth-of-type(2){font-size:22px;color:#24473f}
+.grand-hero-details{background:#fff9eceb;border:1px solid #ba9b634d;padding:13px 24px;color:#24473f;font-size:12px}
+.grand-scroll{z-index:4;bottom:25px;background:#fff9ecdf;color:#24473f;padding:9px 19px;border-radius:40px;font-size:17px}
+.atelier-hero-foreground{position:absolute;inset:-5% -4%;background:url('assets/miidear-watercolor-foreground.webp') center bottom/100% auto no-repeat;z-index:1;pointer-events:none;transform:translateY(calc(var(--journey,0)*35px));mask-image:linear-gradient(transparent,#000 20%,#000)}
+.grand-invitation .invitation-nav{background:#faf6edf5;box-shadow:0 5px 18px #faf6ed;border:0}
+.grand-invitation .opening-note{padding:90px 25px 20px}.grand-invitation .opening-note .eyebrow{color:#846b40;font-size:19px}.grand-invitation .opening-note>p{font-size:48px}
+.grand-invitation .invitation-pages{background:var(--paper)}
+.grand-invitation .invitation-page{mask-image:linear-gradient(transparent,#000 3%,#000 94%,transparent)}
+.atelier-story{height:190svh;min-height:1250px;position:relative;background:var(--paper);isolation:isolate}
+.atelier-story-stage{height:100svh;min-height:720px;position:sticky;top:0;overflow:hidden;display:grid;place-items:center;isolation:isolate}
+.atelier-story-art{position:absolute;inset:-5%;background:linear-gradient(#153b319c,#153b31ad),url('assets/miidear-watercolor-garden.webp') center/cover no-repeat;z-index:-2;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}
+.atelier-story-foreground{position:absolute;inset:0 -8% -5%;background:url('assets/miidear-watercolor-foreground.webp') center bottom/100% auto no-repeat;z-index:-1;pointer-events:none}
+.atelier-story-copy{position:relative;text-align:center;width:min(700px,80%);color:#fff7e7;text-shadow:0 2px 30px #123d31;padding:25px 0 80px;z-index:2}
+.atelier-small{font:italic 22px var(--serif);color:#fff0ca;margin-bottom:24px}
+.atelier-story h2{font:clamp(62px,7vw,105px)/1.02 var(--serif);font-weight:400;margin:0 0 30px}
+.atelier-story h2 em{font:clamp(77px,8.8vw,130px)/1 var(--script);font-weight:400;display:block;margin-top:10px}
+.atelier-story-text{white-space:pre-line;max-width:470px;margin:auto;font:25px/1.65 var(--serif)}
+.atelier-story-paper{position:absolute;inset:0;background:var(--paper);z-index:3;pointer-events:none;transform:translateY(100%);border-radius:50% 50% 0 0/15% 15% 0 0;box-shadow:0 -20px 70px #fff9ec55}
+.grand-invitation .day-details{padding-top:65px;padding-bottom:130px}.grand-invitation .dress-section{padding-top:80px;padding-bottom:110px}
+.grand-invitation .day-details:before,.ceremony-ready .dress-section:after{display:block;inset:-50px -15% 0;background:url('assets/miidear-watercolor-foreground.webp') center/100% auto no-repeat;opacity:.4;border:0;mask-image:linear-gradient(transparent,#000 25%,#000 70%,transparent);transform:translateY(var(--chapter-shift,0px));z-index:-1;pointer-events:none}
+.grand-invitation .section-number{text-transform:none;letter-spacing:0;font:italic 20px var(--serif);color:#846b40}
+.grand-invitation .invitation-section h2{font-size:83px;overflow:visible;line-height:1.05;margin-bottom:35px}
+.grand-invitation .invitation-section h2 em{font-size:100px;line-height:1.1;color:#94713d;overflow:visible}
+.atelier-word{display:inline-block;transform:translate3d(0,45px,0) rotateX(-35deg);transform-origin:50% 100%;opacity:0;transition:transform 1.15s var(--atelier-curve) var(--word-delay),opacity .8s var(--atelier-curve) var(--word-delay);vertical-align:baseline}
+.atelier-entered .atelier-word{opacity:1;transform:none}
+.grand-invitation .dress-color span{border-radius:50% 50% 4px 4px;width:88px;height:130px;box-shadow:inset 0 0 0 5px #fff9ec88,0 15px 25px #24473f15}
+.grand-invitation .rsvp-section{padding-top:110px;padding-bottom:130px}
+.grand-invitation .rsvp-art{background-image:url('assets/miidear-watercolor-foreground.webp');background-size:125% auto;opacity:.7;mask-image:linear-gradient(transparent,#000 25%,#000 75%,transparent)}
+.grand-invitation .rsvp-inner{background:#fff9ecd9;padding:75px 45px 55px;border:1px solid #ba9b6355;border-radius:48% 48% 0 0/90px 90px 0 0;box-shadow:0 25px 80px #24473f0a}
+.grand-invitation .invitation-footer{position:relative;padding-top:130px;background:linear-gradient(var(--paper),#e2e7db);color:#24473f}
+.grand-invitation .invitation-footer:before{content:'';position:absolute;inset:0;background:url('assets/miidear-watercolor-foreground.webp') center bottom/cover no-repeat;opacity:.15;pointer-events:none}
+.chapter-ornament{margin-bottom:20px;width:105px;height:110px}
+.motion-control{background:#153e36ed;color:#fff4d8;border-color:#d8bc7b80}
+.atelier-static .atelier-film{height:auto!important;min-height:0!important}.atelier-static .atelier-stage{position:relative}.atelier-static .atelier-story{height:auto;min-height:0}.atelier-static .atelier-story-stage{position:relative}.atelier-static .atelier-story-paper{display:none}.atelier-static .atelier-word{opacity:1;transform:none;transition:none}.atelier-static .atelier-hero-foreground{transform:none}
+@media(max-width:650px){.grand-invitation .arrival{padding:85px 18px 70px}.grand-invitation .grand-gates{width:calc(100vw - 60px);height:min(650px,73svh);min-height:500px}.grand-invitation .gate-letter{left:5%;right:5%;top:14%}.grand-invitation .gate-letter .arrival-monogram{width:130px;height:130px;margin-bottom:23px}.grand-invitation .gate-letter h1{font-size:41px;line-height:1.15}.grand-invitation .gate-letter p{font-size:15px;max-width:220px}.grand-invitation .gate-florals{inset:-5% -13%;width:126%;height:110%;object-fit:cover}.grand-invitation .grand-hero{height:150svh;min-height:1100px}.atelier-stage{min-height:780px}.grand-hero-copy{padding:50px 20px 170px;width:100%}.grand-hero h1{font-size:117px}.grand-hero-copy>p:first-child{font-size:19px}.grand-hero-copy>p:nth-of-type(2){font-size:19px;max-width:270px}.grand-hero-details{flex-direction:row;gap:12px;font-size:10px;padding:12px 13px}.grand-hero-details i{height:22px;width:1px;margin:0}.grand-invitation .grand-hero-scene{background-position:48% center}.atelier-hero-foreground{inset:0 -45%;background-size:auto 65%}.grand-invitation .opening-note>p{font-size:36px}.atelier-story{height:155svh;min-height:1100px}.atelier-story-stage{min-height:780px}.atelier-story-copy{width:82%;padding-bottom:100px}.atelier-story h2{font-size:61px}.atelier-story h2 em{font-size:75px}.atelier-story-text{font-size:23px}.atelier-story-foreground{inset:0 -50%;background-size:auto 80%}.grand-invitation .invitation-section h2{font-size:58px}.grand-invitation .invitation-section h2 em{font-size:72px}.grand-invitation .day-details:before,.ceremony-ready .dress-section:after{inset:0 -50%;background-size:auto 100%;opacity:.24}.grand-invitation .dress-color span{width:59px;height:98px}.grand-invitation .rsvp-inner{padding:65px 22px 40px}.grand-invitation .rsvp-art{background-size:auto 100%}.grand-invitation .opening-note{padding-top:65px}}
+@media(prefers-reduced-motion:reduce){.grand-invitation .atelier-film{height:auto!important;min-height:0!important}.atelier-stage,.atelier-story-stage{position:relative!important}.atelier-story{height:auto!important;min-height:0!important}.atelier-story-paper{display:none!important}.atelier-word{opacity:1!important;transform:none!important;transition:none!important}.atelier-hero-foreground,.atelier-story-art,.atelier-story-foreground{transform:none!important}}
+
+.atelier-stage,.atelier-story-stage{width:100%;max-width:none}.grand-invitation .grand-hero-copy{width:min(760px,90%)}
+@media(max-width:650px){.grand-invitation .grand-hero-copy{width:100%}}
+
+.atelier-stage:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:100px;background:linear-gradient(transparent,var(--paper));z-index:3;pointer-events:none}.atelier-hero-foreground{mask-image:linear-gradient(transparent,#000 15%,#000 83%,transparent)}
+.atelier-story-foreground{mask-image:linear-gradient(transparent,#000 15%,#000 80%,transparent)}
