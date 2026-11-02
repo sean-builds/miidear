@@ -90,7 +90,7 @@ function doPost(e) {
     return json_({ok:false,code:error.invitationCode||'SERVICE',message:error.invitationCode?error.message:'The invitation service could not complete this request. Please try again.',serverTime:new Date().toISOString()});
   } finally {if(lock&&lock.hasLock())lock.releaseLock();}
 }
-function doGet(){return json_({ok:true,data:{service:'Miidear Invitation Atelier',version:2},serverTime:new Date().toISOString()});}
+function doGet(){return json_({ok:true,data:{service:'Miidear Invitation Atelier',version:2,build:'grand-2026-11-02'},serverTime:new Date().toISOString()});}
 function json_(value){return ContentService.createTextOutput(JSON.stringify(value)).setMimeType(ContentService.MimeType.JSON);}
 function fail_(code,message){var e=new Error(message);e.invitationCode=code;throw e;}
 function props_(){return PropertiesService.getScriptProperties();}
@@ -135,8 +135,8 @@ function validDocument_(doc,publish){
 // One spreadsheet cell is limited to 50,000 characters. Stage chunks first and
 // only then commit a small revision pointer in the master row, under script lock.
 function chunks_(row){var b=weddingBook_(row),s=b.getSheetByName('DesignChunks');if(!s){s=b.insertSheet('DesignChunks');s.appendRow(['key','part','json']);}return s;}
-function writeDocument_(row,doc){var raw=JSON.stringify(doc),key=Utilities.getUuid(),rows=[];for(var offset=0;offset<raw.length;offset+=38000)rows.push([key,rows.length,raw.slice(offset,offset+38000)]);var s=chunks_(row);s.getRange(s.getLastRow()+1,1,rows.length,3).setValues(rows);SpreadsheetApp.flush();return JSON.stringify({storage:'chunks',key:key,count:rows.length});}
-function readDocument_(row,pointer){var p=JSON.parse(pointer);if(p.storage!=='chunks')return p;var rows=all_(chunks_(row)).filter(function(r){return r.values[0]===p.key;}).sort(function(a,b){return Number(a.values[1])-Number(b.values[1]);});if(rows.length!==p.count)fail_('SERVICE','This design could not be loaded. Please contact the atelier.');return JSON.parse(rows.map(function(r){return r.values[2];}).join(''));}
+function writeDocument_(row,doc){var raw=JSON.stringify(doc),key=Utilities.getUuid(),rows=[];for(var offset=0;offset<raw.length;offset+=18000)rows.push([key,rows.length,JSON.stringify(raw.slice(offset,offset+18000))]);var s=chunks_(row);s.getRange(s.getLastRow()+1,1,rows.length,3).setValues(rows);SpreadsheetApp.flush();return JSON.stringify({storage:'chunks',encoding:'json-string',key:key,count:rows.length});}
+function readDocument_(row,pointer){var p=JSON.parse(pointer);if(p.storage!=='chunks')return p;var rows=all_(chunks_(row)).filter(function(r){return r.values[0]===p.key;}).sort(function(a,b){return Number(a.values[1])-Number(b.values[1]);});if(rows.length!==p.count)fail_('SERVICE','This design could not be loaded. Please contact the atelier.');return JSON.parse(rows.map(function(r){return p.encoding==='json-string'?JSON.parse(String(r.values[2])):r.values[2];}).join(''));}
 function getHouseholds_(row){var sheet=weddingBook_(row).getSheetByName('Households');return all_(sheet).map(function(r){var v=r.values;return {row:r.row,id:v[0],name:untext_(v[1]),capacity:Number(v[2]),tokenHash:v[3],response:v[4]?JSON.parse(v[4]):null,updatedAt:v[5]||''};});}
 function publicHouseholds_(rows){return rows.map(function(h){return {id:h.id,name:h.name,capacity:h.capacity,response:h.response,updatedAt:h.updatedAt};});}
 function tokenHousehold_(row,token){if(typeof token!=='string'||!/^[a-f0-9]{64}$/i.test(token))fail_('TOKEN','This personal invitation link is not valid. Please ask the couple for a new one.');var match=getHouseholds_(row).filter(function(h){return h.tokenHash===hash_(token);})[0];if(!match)fail_('TOKEN','This personal invitation link has expired. Please ask the couple for a new one.');return match;}

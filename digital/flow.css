@@ -1,0 +1,13 @@
+/* Guests receive one continuous composition; editing canvases have no sheet chrome. */
+.invitation-pages,.grand-invitation .invitation-pages{display:block;max-width:none;padding:0;margin:0;background:var(--paper)}
+.invitation-pages .invitation-page,.grand-invitation .invitation-pages .invitation-page{display:block;width:min(100%,1000px)!important;max-width:none;margin:0 auto!important;padding:0;border:0;box-shadow:none;opacity:1;transform:none;transition:none;grid-column:auto;background:var(--paper)}
+.invitation-page>canvas{display:block;width:100%!important;height:auto!important}
+.grand-invitation .opening-note{padding-bottom:10px}.grand-invitation .opening-note .fine-rule{height:30px}
+.grand-invitation .day-details{background:linear-gradient(var(--paper),#183b46 110px);padding-top:165px}
+.grand-invitation .dress-section{background:linear-gradient(#183b46,var(--paper) 110px);padding-top:165px}
+.grand-invitation .day-details:before,.grand-invitation .dress-section:before{display:none}
+.grand-invitation .rsvp-section{background:linear-gradient(var(--paper),#e4e9e4 110px);padding-top:120px}
+.grand-invitation .invitation-footer{background:linear-gradient(#e4e9e4,#183b46 110px);padding-top:150px}
+.day-countdown,.grand-invitation .day-countdown{gap:clamp(14px,4vw,44px)}
+.day-countdown>div{min-width:45px}.day-countdown strong{font-variant-numeric:tabular-nums}
+@media(max-width:600px){.grand-invitation .day-details,.grand-invitation .dress-section{padding-top:140px}.grand-invitation .rsvp-section{padding-top:105px}.grand-invitation .invitation-footer{padding-top:135px}.day-countdown,.grand-invitation .day-countdown{gap:clamp(12px,4vw,25px)}.day-countdown>div{min-width:40px}}

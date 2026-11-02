@@ -23,45 +23,36 @@
   D.themes.unshift({key:'grand',name:'The Grand Conservatory',description:'Palace gardens, sculpted florals & heirloom gold',paper:palette.paper,ink:palette.ink,gold:palette.gold});
   const previousTemplate=D.template;
   async function template(){
-    const doc=C.blank('The Grand Conservatory');doc.theme='grand';doc.colors={...palette};doc.pages=[];
-    const monoOptions={first:'P',second:'K',font:'Pinyon Script',frame:'regal',color:palette.ink,frameColor:palette.gold,spacing:-15};
-    const mono=await A.monogram(monoOptions);
-    for(let i=0;i<3;i++){
-      const c=new F.StaticCanvas(null,{width:700,height:1000,backgroundColor:palette.paper,renderOnAddRemove:false});
-      const text=(value,x,y,size,extra={})=>{const o=D.text(value,x,y,size,{fill:palette.ink,width:390,...extra});c.add(o);return o;};
-      if(i===0){
-        c.add(D.place(await D.svgObject(border(),'Palace engraved border'),350,500,660));
-        c.add(D.place(await D.artwork('grand-frame'),350,500,700));
-        c.add(D.place(await D.svgObject(mono,'Your heirloom monogram',{monogramOptions:monoOptions}),350,239,165));
-        text('Together with our families',350,355,19,{binding:'hosts',width:350});
-        text('Paope',350,409,85,{binding:'first',fontFamily:'Pinyon Script',width:400});
-        text('&',350,502,27,{fill:palette.gold,fontStyle:'italic'});
-        text('Kawin',350,546,85,{binding:'second',fontFamily:'Pinyon Script',width:400});
-        text('request the pleasure of your company\nat the celebration of their marriage',350,674,20,{width:340,lineHeight:1.4});
-        text('Saturday, 20 February 2027',350,755,25,{binding:'date',width:380});
-        text('The Glasshouse',350,803,22,{binding:'venue',width:350});
-
-      }else if(i===1){
-        const scene=await D.artwork('grand-scene');D.place(scene,350,500,700);scene.scaleToHeight(1000);c.add(scene);
-        c.add(D.identify(new F.Rect({left:0,top:0,width:700,height:1000,fill:'#071d2b',opacity:.32}),'Evening atmosphere'));
-        c.add(D.place(await D.svgObject(border('#d2b77b'),'Gold architectural border'),350,500,655));
-        text('Where forever begins.',350,148,65,{fontFamily:'Pinyon Script',fill:'#fffaf1',width:530});
-        text(doc.settings.story,350,330,31,{binding:'story',fill:'#fffaf1',width:430,lineHeight:1.5});
-        c.add(D.identify(new F.Rect({left:101,top:655,width:498,height:233,fill:'#fffaf1',opacity:.96,rx:2}),'Ceremony letter'));
-        c.add(D.identify(new F.Rect({left:110,top:664,width:480,height:215,fill:'transparent',stroke:palette.gold,strokeWidth:.7}),'Ceremony letter rule'));
-        text('The ceremony',350,690,24,{fontStyle:'italic',width:400});text('17:00',350,733,47,{binding:'time'});text('The Glasshouse',350,806,26,{binding:'venue'});
-      }else{
-        c.add(D.place(await D.artwork('grand-frame'),350,500,700,{angle:180,opacity:.86}));
-        c.add(D.place(await D.svgObject(border(),'An heirloom border'),350,500,660));
-        c.add(D.place(await D.svgObject(mono,'Your heirloom monogram',{monogramOptions:monoOptions}),350,236,170));
-        text('The best part of our day',350,412,34,{fontFamily:'Italiana',width:380});
-        text('will be you.',350,473,80,{fontFamily:'Pinyon Script',width:390});
-        text('A table full of stories.\nA garden full of music.\nEveryone we love, together.',350,615,22,{width:320,lineHeight:1.65});
-        text('We saved a place for you.',350,810,22,{fontStyle:'italic',width:245});
-      }
-      c.renderAll();doc.pages.push({id:C.uid(),name:['The grand invitation','The candlelit celebration','Everyone we love'][i],width:700,height:1000,background:palette.paper,canvas:D.serialize(c)});await c.dispose();
-    }
-    return C.validate(doc);
+    const doc=C.blank('The Grand Conservatory');doc.theme='grand';doc.colors={...palette};
+    const c=new F.StaticCanvas(null,{width:700,height:2700,backgroundColor:palette.paper,renderOnAddRemove:false});
+    const text=(value,x,y,size,extra={})=>{const o=D.text(value,x,y,size,{fill:palette.ink,width:390,...extra});c.add(o);return o;};
+    async function canopy(top){const o=await D.artwork('grand-frame');o.set({width:1024,height:1250,cropX:0,cropY:0,name:'Flowing floral canopy'});o.scaleToWidth(700);o.set({left:350,top:top+o.getScaledHeight()/2,originX:'center',originY:'center'});c.add(o);}
+    const options={first:'P',second:'K',font:'Pinyon Script',frame:'regal',color:palette.ink,frameColor:palette.gold,spacing:-15},mono=await A.monogram(options);
+    await canopy(0);
+    c.add(D.place(await D.svgObject(mono,'Your heirloom monogram',{monogramOptions:options}),350,185,165));
+    text('Together with our families',350,300,21,{binding:'hosts',width:360});
+    text('Paope',350,364,88,{binding:'first',fontFamily:'Pinyon Script',width:420});
+    text('&',350,463,27,{fill:palette.gold,fontStyle:'italic'});
+    text('Kawin',350,508,88,{binding:'second',fontFamily:'Pinyon Script',width:420});
+    text('request the pleasure of your company\nat the celebration of their marriage',350,650,21,{width:350,lineHeight:1.4});
+    text('Saturday, 20 February 2027',350,745,26,{binding:'date',width:400});text('The Glasshouse',350,798,23,{binding:'venue',width:350});
+    const scene=await D.artwork('grand-scene');scene.scaleToHeight(1000);scene.set({left:350,top:1350,originX:'center',originY:'center'});c.add(scene);
+    c.add(D.identify(new F.Rect({left:0,top:850,width:700,height:1000,fill:'#071d2b',opacity:.32}),'Evening atmosphere'));
+    function fade(name,left,top,width,height,from,to,vertical=true){const gradient=new F.Gradient({type:'linear',coords:{x1:0,y1:0,x2:vertical?0:width,y2:vertical?height:0},colorStops:[{offset:0,color:palette.paper,opacity:from},{offset:1,color:palette.paper,opacity:to}]});c.add(D.identify(new F.Rect({left,top,width,height,fill:gradient,strokeWidth:0}),name));}
+    fade('Paper into the evening',0,850,700,200,1,0);fade('Evening into the garden',0,1670,700,180,0,1);
+    fade('Soft evening edge, left',0,850,90,1000,1,0,false);fade('Soft evening edge, right',610,850,90,1000,0,1,false);
+    const shadow=new F.Shadow({color:'rgba(0,0,0,.65)',blur:9,offsetY:2});
+    text('Where forever begins.',350,1100,65,{fontFamily:'Pinyon Script',fill:'#fffaf1',width:530,shadow});
+    text(doc.settings.story,350,1270,31,{binding:'story',fill:'#fffaf1',width:430,lineHeight:1.5,shadow});
+    c.add(D.identify(new F.Rect({left:123,top:1480,width:454,height:214,fill:'#fffaf1',opacity:.96,rx:2}),'The ceremony details'));
+    c.add(D.identify(new F.Rect({left:132,top:1489,width:436,height:196,fill:'transparent',stroke:palette.gold,strokeWidth:.7}),'Ceremony gold rule'));
+    text('The ceremony',350,1508,23,{fontStyle:'italic'});text('17:00',350,1547,44,{binding:'time'});text('The Glasshouse',350,1616,25,{binding:'venue'});
+    await canopy(1830);fade('The garden settles into the paper',0,2560,700,140,0,1);
+    c.add(D.place(await D.svgObject(mono,'Your heirloom monogram',{monogramOptions:options}),350,2000,155));
+    text('The best part of our day',350,2175,35,{fontFamily:'Italiana',width:390});text('will be you.',350,2237,80,{fontFamily:'Pinyon Script',width:390});
+    text('A table full of stories.\nA garden full of music.\nEveryone we love, together.',350,2380,23,{width:320,lineHeight:1.65});
+    text('We saved a place for you.',350,2550,24,{fontStyle:'italic',width:280});
+    c.renderAll();doc.pages=[{id:C.uid(),name:'Your flowing invitation',width:700,height:2700,background:palette.paper,canvas:D.serialize(c)}];await c.dispose();return C.validate(doc);
   }
   D.template=(key='grand')=>key==='grand'?template():previousTemplate(key);
   function cover(){return '<div class="grand-backdrop" aria-hidden="true"></div><div class="grand-cover-heading"><span>A wedding invitation</span><span id="arrivalDate"></span></div><div class="grand-gates"><div class="gate-leaf gate-left" aria-hidden="true">'+gate()+'</div><div class="gate-leaf gate-right" aria-hidden="true">'+gate()+'</div><div class="gate-letter"><div id="arrivalMonogram" class="arrival-monogram"></div><h1 id="arrivalNames"></h1><p>request the pleasure of your company</p></div><button class="wax-seal" id="openInvitation" aria-label="Open your wedding invitation"><span id="sealInitials"></span><small>OPEN</small></button><button class="open-letter" id="openLetter">Open our celebration <span>↓</span></button><img class="gate-florals" src="'+C.asset('assets/grand-floral-frame.webp')+'" alt="" aria-hidden="true"></div><p class="grand-cover-foot">Some days are meant to be unforgettable.</p>';}
