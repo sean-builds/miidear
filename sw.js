@@ -5,7 +5,7 @@
    CACHE_VERSION whenever you change cached files to push an update.
    All paths are root-relative to match a flat repository (all files in root).
    ========================================================================== */
-const CACHE_VERSION = 'miidear-v63';
+const CACHE_VERSION = 'miidear-v64';
 
 const PRECACHE = [
   './',
@@ -17,18 +17,18 @@ const PRECACHE = [
   './booking.html',
   './admin.html',
   './dashboard.html',
-  './style.css',
-  './main.js',
-  './motion.js',
-  './lightbox.js',
-  './booking.js',
-  './admin.js',
-  './dashboard.js',
-  './carousel.js',
-  './content.js',
-  './emailjs.js',
+  './style.css?v=64',
+  './main.js?v=64',
+  './motion.js?v=64',
+  './lightbox.js?v=64',
+  './booking.js?v=64',
+  './admin.js?v=64',
+  './dashboard.js?v=64',
+  './carousel.js?v=64',
+  './content.js?v=64',
+  './emailjs.js?v=64',
   './hero-poster.jpg',
-  './supabase-client.js',
+  './supabase-client.js?v=64',
   './manifest.json',
   './favicon.svg',
   './miidear-logo.png',
