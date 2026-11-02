@@ -3,7 +3,7 @@
 Three isolated routes, with no incoming links added to the normal website:
 
 - `../digitalinv/`: The Conservatory sample, or a published design using `?id=…` and a private household key in the URL fragment.
-- `../digitalbuild/`: blank canvas or six editable suites. Templates, vector initials, original flowers, text, uploads, color cutouts, layers, grouping, alignment, page ordering, wedding settings, local projects, PNG/SVG/JSON exports and guest management.
+- `../digitalbuild/`: blank canvas or seven editable suites. Templates, vector initials, original flowers, text, uploads, color cutouts, layers, grouping, alignment, page ordering, wedding settings, local projects, PNG/SVG/JSON exports and guest management.
 - `../digitaldashboard/`: a clearly labeled sample, or a wedding-scoped guest book using its private access link. Search, response/diet filters, meal totals, CSV and print.
 
 The guest invitation and editor use the same Fabric document model. The original watercolor is a transparent WebP. New monograms are licensed font outlines in true vector paths. Plain-background removal is a color-distance cutout with continuous alpha, feathering and edge decontamination; it is not a neural segmentation model.
@@ -26,4 +26,4 @@ Fabric and OpenType.js retain their MIT notices in vendor/. Fonts retain their G
 
 ## Validation
 
-19 Node service/data tests cover authorization, wedding isolation, token revocation, deadlines, capacity, menu enforcement, response replacement, draft separation, Sheets chunking, formula escaping and cutout alpha. 42 browser checks cover every template page's serialization round trip, vector imports, SVG safety, library artwork, IndexedDB and transformed ungrouping. UI checks additionally cover blank-start editing, monogram creation, undo/redo, saved-project reload, preview, export and dashboard filtering. Google deployment and an end-to-end real RSVP must be verified separately after owner authorization.
+19 Node service/data tests cover authorization, wedding isolation, token revocation, deadlines, capacity, menu enforcement, response replacement, draft separation, Sheets chunking, formula escaping and cutout alpha. 48 browser checks cover every template page's serialization round trip, vector imports, SVG safety, library artwork, IndexedDB and transformed ungrouping. UI checks additionally cover blank-start editing, monogram creation, undo/redo, saved-project reload, preview, export and dashboard filtering. The owner-approved Google service is deployed. A live two-person reply was saved through the guest page and appeared with separate meals and dietary notes in the private couple dashboard. The atelier sign-in entry point is available in the header and at digitalbuild/#account.
